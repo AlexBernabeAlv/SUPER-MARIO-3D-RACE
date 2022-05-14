@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1cf7a7117baf3b14993964cc512bdabb
+guid: 2fccbc50e28bbdb4a9e6bcbf9a339ff4
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
@@ -38,7 +38,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -78,7 +78,8 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
+  referencedClips:
+  - 42b8518b82a4037438ad686820ed521b
   importAnimation: 1
   humanDescription:
     serializedVersion: 3

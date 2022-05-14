@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class YoshiJump : MonoBehaviour
+public class Player1 : MonoBehaviour
 {
 
     private void OnTriggerEnter(Collider other)
