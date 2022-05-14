@@ -8,7 +8,6 @@ public class Player1 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Te caiste puto");
         animator.SetBool("JumpReady", true);
     }
     public Animator animator;
@@ -19,20 +18,28 @@ public class Player1 : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown(KeyCode.W) && animator.GetBool("JumpReady"))
+        foreach (Camera c in Camera.allCameras)
+        {
+            if (c.gameObject.name == "Player1MainCamera")
+            {
+                if (Input.GetKey(KeyCode.Q)) c.depth = -1;
+                else c.depth = 1;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.E) && animator.GetBool("JumpReady"))
         {
             animator.SetBool("JumpReady", false);
             animator.SetBool("IsJumping", true);
             animator.SetBool("IsIdle", false);
         }
-        else if (Input.GetKeyDown(KeyCode.D)) {
+        else if (Input.GetKey(KeyCode.W)) {
             animator.SetBool("IsRunning", true);
             animator.SetBool("IsIdle", false);
         }
-        else if (Input.GetKeyUp(KeyCode.D)) {
-            animator.SetBool("IsRunning", false);
-            animator.SetBool("IsIdle", true);
-        }
+        //else if (!Input.GetKey(KeyCode.W)) {
+        //    animator.SetBool("IsRunning", false);
+        //    animator.SetBool("IsIdle", true);
+        //}
 
         //}
         //else
