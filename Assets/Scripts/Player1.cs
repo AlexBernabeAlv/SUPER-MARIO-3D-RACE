@@ -38,7 +38,7 @@ public class Player1 : MonoBehaviour
 
         foreach (Camera c in Camera.allCameras) {
             if (c.gameObject.name == "Player1MainCamera") {
-                c.transform.position = transform.position + new Vector3(0.0f, 4.0f, -4.0f);
+                c.transform.position = transform.position + new Vector3(0.0f, 3.0f, -4.0f);
                 if (Input.GetKey(KeyCode.Q)) c.depth = -1;
                 else c.depth = 1;
             }
