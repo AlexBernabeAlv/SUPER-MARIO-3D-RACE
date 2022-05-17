@@ -15,6 +15,7 @@ public class Player1 : MonoBehaviour
     bool isIdle;
     bool isRunning;
     bool isJumping;
+    bool godMode;
 
     private void OnTriggerEnter(Collider other) {
         Debug.Log("Ya puedes volver a saltar");
@@ -27,12 +28,19 @@ public class Player1 : MonoBehaviour
         isIdle = true;
         isRunning = false;
         isJumping = false;
+        godMode = false;
         Debug.Log("Level 1 started");
         animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update() {
+        if (Input.GetKeyDown(KeyCode.G)) godMode = !godMode;
+
+        // if(godMode){
+        // disable collisions 
+        //}
+
         isRunning = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
         animator.SetBool("IsRunning", isRunning);
 
@@ -45,8 +53,7 @@ public class Player1 : MonoBehaviour
             else if (c.gameObject.name == "Player1SecondCamera") c.transform.position = transform.position + new Vector3(0.0f, 4.0f, 5.0f);
         }
 
-        if (isJumping)
-        {
+        if (isJumping) {
             Debug.Log("Saltando");
             transform.Translate(0.0f, jumpSpeed * Time.deltaTime, 0.0f);
         }
