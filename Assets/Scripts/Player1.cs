@@ -6,35 +6,35 @@ using UnityEngine;
 public class Player1 : MonoBehaviour
 {
 
-    public Animator animator;
     public AudioClip whineSound;
 
-    public float runSpeed = 7.0f;
-    public float turnSpeed = 180.0f;
-    public float jumpSpeed = 4.0f;
+    public float runSpeed = 7f;
+    public float turnSpeed = 180f;
+    public float jumpHeight = 5f;
     public int currentCheckpoint = 0;
-    bool isIdle;
+    public Rigidbody rb;
     bool isRunning;
-    bool isJumping;
+    bool isGrounded;
     bool godMode;
     bool restart;
 
-    private void OnTriggerEnter(Collider col) {
-        Debug.Log("Ya puedes volver a saltar");
-        isJumping = false;
-        animator.SetBool("IsJumping", isJumping);
-        if(col.gameObject.tag == "Enemy") restart = true;
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "Enemy") restart = true;
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if(col.collider.tag == "Ground") isGrounded = true;
     }
 
     // Start is called before the first frame update
     void Start() {
-        isIdle = true;
         isRunning = false;
-        isJumping = false;
+        isGrounded = true;
         godMode = false;
         restart = false;
         currentCheckpoint = 0;
-        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -42,9 +42,9 @@ public class Player1 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G)) godMode = !godMode;
         if (restart) {
             if (currentCheckpoint == 0) {
-                transform.position = new Vector3(-5.0f, -0.5f, 5.0f);
-                transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
-                AudioSource.PlayClipAtPoint(whineSound, transform.position);
+                transform.position = new Vector3(-5f, -0.5f, 5f);
+                transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+                AudioSource.PlayClipAtPoint(whineSound, transform.position, 10f);
             }
             restart = false;
         }
@@ -53,33 +53,27 @@ public class Player1 : MonoBehaviour
         //}
 
         isRunning = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
-        animator.SetBool("IsRunning", isRunning);
+        gameObject.GetComponent<Animator>().SetBool("IsRunning", isRunning);
+        gameObject.GetComponent<Animator>().SetBool("IsJumping", !isGrounded);
 
         foreach (Camera c in Camera.allCameras) {
             if (c.gameObject.name == "Player1MainCamera") {
-                c.transform.position = transform.position + new Vector3(0.0f, 3.0f, -4.0f);
+                c.transform.position = transform.position + new Vector3(0f, 3f, -4f);
                 if (Input.GetKey(KeyCode.Q)) c.depth = -1;
                 else c.depth = 1;
             }
-            else if (c.gameObject.name == "Player1SecondCamera") c.transform.position = transform.position + new Vector3(0.0f, 4.0f, 5.0f);
+            else if (c.gameObject.name == "Player1SecondCamera") c.transform.position = transform.position + new Vector3(0f, 4f, 5f);
         }
 
-        if (isJumping) {
-            Debug.Log("Saltando");
-            transform.Translate(0.0f, jumpSpeed * Time.deltaTime, 0.0f);
+        if (Input.GetKeyDown(KeyCode.E) && isGrounded)
+        {
+            rb.AddForce(new Vector3(0f,1f,0f) * jumpHeight, ForceMode.Impulse);
+            isGrounded = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && !isJumping) {
-            isJumping = true;
-            animator.SetBool("IsJumping", isJumping);
-        }
-        else {
-            if (Input.GetKey(KeyCode.W)) transform.Translate(0.0f, 0.0f, runSpeed * Time.deltaTime);
-            else if (Input.GetKey(KeyCode.S)) transform.Translate(0.0f, 0.0f, -runSpeed * Time.deltaTime);
-            if (Input.GetKey(KeyCode.A)) transform.Rotate(0.0f, -turnSpeed * Time.deltaTime, 0.0f);
-            else if (Input.GetKey(KeyCode.D)) transform.Rotate(0.0f, turnSpeed * Time.deltaTime, 0.0f);
-        }
-        isIdle = !isRunning && !isJumping;
-        animator.SetBool("IsIdle", isIdle);
+        if (Input.GetKey(KeyCode.W)) transform.Translate(transform.forward * runSpeed * Time.deltaTime, Space.World);
+        else if (Input.GetKey(KeyCode.S)) transform.Translate(-transform.forward * runSpeed * Time.deltaTime, Space.World);
+        if (Input.GetKey(KeyCode.A)) transform.Rotate(0f, -turnSpeed * Time.deltaTime, 0f);
+        else if (Input.GetKey(KeyCode.D)) transform.Rotate(0f, turnSpeed * Time.deltaTime, 0f);
     }
 }
