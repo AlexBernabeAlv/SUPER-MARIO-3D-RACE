@@ -12,15 +12,18 @@ public class Player1 : MonoBehaviour
     public float runSpeed = 7.0f;
     public float turnSpeed = 180.0f;
     public float jumpSpeed = 4.0f;
+    public int currentCheckpoint = 0;
     bool isIdle;
     bool isRunning;
     bool isJumping;
     bool godMode;
+    bool restart;
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider col) {
         Debug.Log("Ya puedes volver a saltar");
         isJumping = false;
         animator.SetBool("IsJumping", isJumping);
+        if(col.gameObject.tag == "Enemy") restart = true;
     }
 
     // Start is called before the first frame update
@@ -29,14 +32,22 @@ public class Player1 : MonoBehaviour
         isRunning = false;
         isJumping = false;
         godMode = false;
-        Debug.Log("Level 1 started");
+        restart = false;
+        currentCheckpoint = 0;
         animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update() {
         if (Input.GetKeyDown(KeyCode.G)) godMode = !godMode;
-
+        if (restart) {
+            if (currentCheckpoint == 0) {
+                transform.position = new Vector3(-5.0f, -0.5f, 5.0f);
+                transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
+                AudioSource.PlayClipAtPoint(whineSound, transform.position);
+            }
+            restart = false;
+        }
         // if(godMode){
         // disable collisions 
         //}

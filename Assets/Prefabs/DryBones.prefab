@@ -813,7 +813,7 @@ GameObject:
   - component: {fileID: 7065100351818838534}
   m_Layer: 0
   m_Name: DryBones
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
