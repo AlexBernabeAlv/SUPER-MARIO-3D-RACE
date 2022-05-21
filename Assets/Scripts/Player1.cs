@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class Player1 : MonoBehaviour
@@ -17,6 +18,14 @@ public class Player1 : MonoBehaviour
     bool isGrounded;
     bool godMode;
     bool restart;
+    private KeyCode[] keyCodes = {
+         KeyCode.Alpha1,
+         KeyCode.Alpha2,
+         KeyCode.Alpha3,
+         KeyCode.Alpha4,
+         KeyCode.Alpha5,
+         KeyCode.Alpha6,
+     };
 
     private void OnTriggerEnter(Collider col)
     {
@@ -39,6 +48,11 @@ public class Player1 : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+        for(int i = 1; i <= 6; ++i) {
+        if (Input.GetKeyDown(keyCodes[i-1]))
+            SceneManager.LoadScene("LEVEL"+i);
+        }
+
         if (Input.GetKeyDown(KeyCode.G)) godMode = !godMode;
         if (restart) {
             if (currentCheckpoint == 0) {
