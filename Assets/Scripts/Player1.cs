@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class Player1 : MonoBehaviour
-{
+public class Player1 : MonoBehaviour {
 
     public AudioClip whineSound;
 
@@ -18,6 +17,7 @@ public class Player1 : MonoBehaviour
     bool isGrounded;
     bool godMode;
     bool restart;
+    bool winner;
     private KeyCode[] keyCodes = {
          KeyCode.Alpha1,
          KeyCode.Alpha2,
@@ -27,14 +27,21 @@ public class Player1 : MonoBehaviour
          KeyCode.Alpha6,
      };
 
-    private void OnTriggerEnter(Collider col)
-    {
+    private void OnTriggerEnter(Collider col) {
         if (col.gameObject.tag == "Enemy") restart = true;
+        if (col.gameObject.tag == "Odyssey") winner = true;
     }
 
-    private void OnCollisionEnter(Collision col)
-    {
-        if(col.collider.tag == "Ground") isGrounded = true;
+    private void OnCollisionEnter(Collision col) {
+        if(col.collider.tag == "Ground" || col.gameObject.tag == "Odyssey") isGrounded = true;
+    }
+
+    public float getPlayerZ() {
+        return transform.position.z;
+    }
+
+    public bool isWinner(){
+        return winner;
     }
 
     // Start is called before the first frame update
@@ -43,6 +50,7 @@ public class Player1 : MonoBehaviour
         isGrounded = true;
         godMode = false;
         restart = false;
+        winner = false;
         currentCheckpoint = 0;
     }
 
@@ -56,9 +64,9 @@ public class Player1 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G)) godMode = !godMode;
         if (restart) {
             if (currentCheckpoint == 0) {
+                AudioSource.PlayClipAtPoint(whineSound, transform.position, 10f);
                 transform.position = new Vector3(-5f, -0.5f, 5f);
                 transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
-                AudioSource.PlayClipAtPoint(whineSound, transform.position, 10f);
             }
             restart = false;
         }
