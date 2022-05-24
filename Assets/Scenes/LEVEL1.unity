@@ -10282,7 +10282,6 @@ GameObject:
   m_Component:
   - component: {fileID: 960207990}
   - component: {fileID: 960207991}
-  - component: {fileID: 960207992}
   m_Layer: 0
   m_Name: DryBonesFactory
   m_TagString: Untagged
@@ -10319,26 +10318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dryBones: {fileID: 3263482412900656476, guid: e8595932ecbc1f94b8f34923d884a316, type: 3}
   runSpeed: 2
---- !u!95 &960207992
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 960207989}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 59c6fc54af746f448a7b74aba200db96, type: 3}
-  m_Controller: {fileID: 9100000, guid: a63fe637a629b0d46900746840630997, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  turnSpeed: 90
 --- !u!1 &1009998157
 GameObject:
   m_ObjectHideFlags: 0
@@ -11047,7 +11027,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f6c5ababfcdf6d24cac9532ac5c3ff64, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
