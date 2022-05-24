@@ -34,7 +34,8 @@ public class GameManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "LEVEL5") level = 5;
         else if (SceneManager.GetActiveScene().name == "LEVEL6") level = 6;
         else level = 0;
-        if (player1.isWinner() || player2.isWinner()) SceneManager.LoadScene("LEVEL"+ (level+1).ToString());
+        //if (player1.isWinner() || player2.isWinner()) SceneManager.LoadScene("LEVEL"+ (level+1).ToString());
+        if (player1.isWinner() || player2.isWinner()) SceneManager.LoadScene("DANCE");
 
         left.transform.position = new Vector3((float)Screen.width / 2 - 70, 40, 0);
         right.transform.position = new Vector3(Screen.width - 70, 40, 0);

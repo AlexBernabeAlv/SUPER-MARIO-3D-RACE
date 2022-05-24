@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LEVEL6.unity
     guid: 3e6f6afa70de922459b800e7ddd6dbf6
+  - enabled: 1
+    path: Assets/Scenes/DANCE.unity
+    guid: 159d2bc6ea4a3e749a7a057e0f52dacb
   m_configObjects: {}

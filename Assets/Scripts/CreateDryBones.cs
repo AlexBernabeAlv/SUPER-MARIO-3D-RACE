@@ -18,7 +18,6 @@ public class CreateDryBones : MonoBehaviour {
             obj[0].transform.Rotate(0, 180, 0);
             obj[0].transform.parent = transform;
             transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("IsRunning", true);
-            Debug.Log("estoy aqui");
         }
         else if (SceneManager.GetActiveScene().name == "LEVEL2") {
             obj = new GameObject[4];
