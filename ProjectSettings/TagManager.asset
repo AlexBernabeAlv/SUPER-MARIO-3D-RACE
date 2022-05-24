@@ -9,6 +9,7 @@ TagManager:
   - PositionLeft
   - PositionRight
   - Odyssey
+  - Coin
   layers:
   - Default
   - TransparentFX

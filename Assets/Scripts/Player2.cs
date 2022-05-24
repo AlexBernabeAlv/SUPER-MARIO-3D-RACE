@@ -8,17 +8,18 @@ public class Player2 : MonoBehaviour
 {
 
     public AudioClip whineSound;
+    public AudioClip coinSound;
 
     public float runSpeed = 7f;
     public float turnSpeed = 180f;
     public float jumpHeight = 5f;
-    public int currentCheckpoint = 0;
     public Rigidbody rb;
     bool isRunning;
     bool isGrounded;
     bool godMode;
     bool restart;
     bool winner;
+    Vector3 lastCheckpointPosition;
     private KeyCode[] keyCodes = {
          KeyCode.Alpha1,
          KeyCode.Alpha2,
@@ -29,8 +30,14 @@ public class Player2 : MonoBehaviour
      };
 
     private void OnTriggerEnter(Collider col) {
-        if (col.gameObject.tag == "Enemy") restart = true;
+        if (col.gameObject.tag == "Enemy" && !godMode) restart = true;
         if (col.gameObject.tag == "Odyssey") winner = true;
+        if (col.gameObject.tag == "Coin")
+        {
+            runSpeed = runSpeed + 0.1f;
+            Destroy(col.gameObject);
+            AudioSource.PlayClipAtPoint(coinSound, transform.position, 0.05f);
+        }
     }
 
     private void OnCollisionEnter(Collision col) {
@@ -52,7 +59,7 @@ public class Player2 : MonoBehaviour
         godMode = false;
         restart = false;
         winner = false;
-        currentCheckpoint = 0;
+        lastCheckpointPosition = new Vector3(5f, -0.3f, 4f);
     }
 
     // Update is called once per frame
@@ -64,17 +71,14 @@ public class Player2 : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.G)) godMode = !godMode;
-        if (restart) {
-            if (currentCheckpoint == 0) {
-                AudioSource.PlayClipAtPoint(whineSound, transform.position, 10f);
-                transform.position = new Vector3(-5f, -0.5f, 5f);
-                transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
-            }
+
+        if (restart)
+        {
+            AudioSource.PlayClipAtPoint(whineSound, transform.position);
+            transform.position = lastCheckpointPosition;
+            transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
             restart = false;
         }
-        // if(godMode){
-        // disable collisions 
-        //}
 
         isRunning = Input.GetKey(KeyCode.I) || Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.K) || Input.GetKey(KeyCode.L);
         gameObject.GetComponent<Animator>().SetBool("IsRunning", isRunning);
