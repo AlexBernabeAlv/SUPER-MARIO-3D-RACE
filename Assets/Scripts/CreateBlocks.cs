@@ -25,7 +25,12 @@ public class CreateBlocks : MonoBehaviour
                 obj.transform.parent = transform;
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL3") { }
+        else if (SceneManager.GetActiveScene().name == "LEVEL3")
+        {
+            obj = obj = (GameObject)Instantiate(block, new Vector3(-8.32f, -1.53f, 58.3f), block.transform.rotation);
+            obj = obj = (GameObject)Instantiate(block, new Vector3(8.32f, -1.53f, 58.3f), block.transform.rotation);
+            obj.transform.parent = transform;
+        }
         else if (SceneManager.GetActiveScene().name == "LEVEL4") { }
         else if (SceneManager.GetActiveScene().name == "LEVEL5") { }
     }

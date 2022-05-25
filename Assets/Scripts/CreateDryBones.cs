@@ -48,7 +48,27 @@ public class CreateDryBones : MonoBehaviour
                 transform.GetChild(i).gameObject.GetComponent<Animator>().SetBool("IsRunning", true);
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL3") { }
+        else if (SceneManager.GetActiveScene().name == "LEVEL3")
+        {
+            obj = new GameObject[4];
+            direction = new int[4];
+            for (int i = 0; i < 4; ++i)
+            {
+                if (i % 2 == 0)
+                {
+                    obj[i] = (GameObject)Instantiate(dryBones, new Vector3(-3.6f, -2.5f, 42f + i * 5), dryBones.transform.rotation);
+                    obj[i].transform.Rotate(0, -90, 0);
+                }
+                else
+                {
+
+                    obj[i] = (GameObject)Instantiate(dryBones, new Vector3(3.6f, -2.5f, 42f + (i-1) * 5), dryBones.transform.rotation);
+                    obj[i].transform.Rotate(0, 90, 0);
+                }
+                obj[i].transform.parent = transform;
+                transform.GetChild(i).gameObject.GetComponent<Animator>().SetBool("IsRunning", true);
+            }
+        }
         else if (SceneManager.GetActiveScene().name == "LEVEL4") { }
         else if (SceneManager.GetActiveScene().name == "LEVEL5") { }
     }

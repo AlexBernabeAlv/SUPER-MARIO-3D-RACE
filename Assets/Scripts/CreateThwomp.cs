@@ -13,6 +13,7 @@ public class CreateThwomp : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "LEVEL1")
         {
+
             for (int i = 0; i < 2; ++i)
             {
                 GameObject obj;
@@ -21,7 +22,8 @@ public class CreateThwomp : MonoBehaviour
                 obj.transform.parent = transform;
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL2") {
+        else if (SceneManager.GetActiveScene().name == "LEVEL2")
+        {
             for (int i = 0; i < 2; ++i)
             {
                 GameObject obj;
@@ -31,7 +33,16 @@ public class CreateThwomp : MonoBehaviour
             }
         }
         else if (SceneManager.GetActiveScene().name == "LEVEL3") { }
-        else if (SceneManager.GetActiveScene().name == "LEVEL4") { }
+        else if (SceneManager.GetActiveScene().name == "LEVEL4")
+        {
+            for (int i = 0; i < 4; ++i)
+            {
+                GameObject obj;
+                if (i % 2 == 0) obj = (GameObject)Instantiate(thwomp, new Vector3(-7.0f, 5.0f, 21.0f + i * 12.5f), thwomp.transform.rotation);
+                else obj = (GameObject)Instantiate(thwomp, new Vector3(7.0f, 5.0f, 21.0f + (i - 1) * 12.5f), thwomp.transform.rotation);
+                obj.transform.parent = transform;
+            }
+        }
         else if (SceneManager.GetActiveScene().name == "LEVEL5") { }
     }
 
