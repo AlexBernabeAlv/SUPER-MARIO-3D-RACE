@@ -76,8 +76,6 @@ public class CreateDryBones : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(direction[0]);
-        Debug.Log(obj[0].transform.rotation.eulerAngles.y);
         for (int i = 0; i < obj.Length; ++i)
         {
             if (changeDirection)
@@ -150,7 +148,7 @@ public class CreateDryBones : MonoBehaviour
                     }
                     else if (direction[i] == 1)
                     {
-                        if (obj[i].transform.rotation.eulerAngles.y > 0)
+                        if (obj[i].transform.rotation.eulerAngles.y < 90)
                         {
                             obj[i].transform.Rotate(0, -turnSpeed * Time.deltaTime, 0);
                         }
@@ -164,7 +162,7 @@ public class CreateDryBones : MonoBehaviour
                     {
                         if (obj[i].transform.rotation.eulerAngles.y >= 270)
                         {
-                            obj[i].transform.Rotate(0, turnSpeed * Time.deltaTime, 0);
+                            obj[i].transform.Rotate(0, -turnSpeed * Time.deltaTime, 0);
                         }
                         else
                         {
@@ -176,7 +174,7 @@ public class CreateDryBones : MonoBehaviour
                     {
                         if (obj[i].transform.rotation.eulerAngles.y >= 180)
                         {
-                            obj[i].transform.Rotate(0, turnSpeed * Time.deltaTime, 0);
+                            obj[i].transform.Rotate(0, -turnSpeed * Time.deltaTime, 0);
                         }
                         else
                         {

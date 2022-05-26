@@ -17,7 +17,7 @@ public class Player1 : MonoBehaviour {
     bool isGrounded;
     bool godMode;
     bool restart;
-    bool winner;
+    static public bool winner;
     Vector3 lastCheckpointPosition;
 
     private KeyCode[] keyCodes = {
@@ -48,7 +48,7 @@ public class Player1 : MonoBehaviour {
         return transform.position.z;
     }
 
-    public bool isWinner(){
+    static public bool isWinner(){
         return winner;
     }
 

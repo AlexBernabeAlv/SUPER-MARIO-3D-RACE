@@ -11,14 +11,14 @@ public class CreateDancerYoshi : MonoBehaviour
     void Start()
     {
         GameObject obj;
-        if (winner == 1)
+        if (Player1.isWinner())
         {
             obj = (GameObject)Instantiate(dancerYoshiGreen, new Vector3(0f, -0.3f, -1f), dancerYoshiGreen.transform.rotation);
             obj.transform.Rotate(0, -180, 0);
             obj.transform.parent = transform;
             transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("IsDancingSalsa", true);
         }
-        else if (winner == 2)
+        else if (Player2.isWinner())
         {
             obj = (GameObject)Instantiate(dancerYoshiYellow, new Vector3(0f, -0.3f, -1f), dancerYoshiYellow.transform.rotation);
             obj.transform.Rotate(0, -180, 0);

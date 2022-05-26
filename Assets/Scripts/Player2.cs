@@ -18,7 +18,7 @@ public class Player2 : MonoBehaviour
     bool isGrounded;
     bool godMode;
     bool restart;
-    bool winner;
+    static public bool winner;
     Vector3 lastCheckpointPosition;
     private KeyCode[] keyCodes = {
          KeyCode.Alpha1,
@@ -44,7 +44,7 @@ public class Player2 : MonoBehaviour
         if (col.collider.tag == "Ground" || col.gameObject.tag == "Odyssey") isGrounded = true;
     }
 
-    public bool isWinner() {
+    static public bool isWinner() {
         return winner;
     }
 
