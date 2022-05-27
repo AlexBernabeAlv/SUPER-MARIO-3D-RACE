@@ -1,21 +1,59 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CreateHammerBro : MonoBehaviour
 {
     public GameObject hammerBro;
+    GameObject[] obj;
 
     // Start is called before the first frame update
     void Start()
     {
-        //for (int i = 0; i < 12; ++i)
-        //{
-        //    GameObject obj;
-        //    if (i % 2 == 0) obj = (GameObject)Instantiate(hammerBro, new Vector3(-3.0f, 1.0f, 30.0f +i), hammerBro.transform.rotation);
-        //    else obj = (GameObject)Instantiate(hammerBro, new Vector3(3.0f, 1.0f, 30.0f+i), hammerBro.transform.rotation);
-        //    obj.transform.parent = transform;
-        //}
+        if (SceneManager.GetActiveScene().name == "LEVEL1")
+        {
+
+        }
+        else if (SceneManager.GetActiveScene().name == "LEVEL2") {
+
+        }
+        else if (SceneManager.GetActiveScene().name == "LEVEL3") {
+            obj = new GameObject[2];
+
+            for (int i = 0; i < 2; ++i)
+            {
+                if (i % 2 == 0) obj[i] = (GameObject)Instantiate(hammerBro, new Vector3(-10f, -0.5f, 15f), hammerBro.transform.rotation);
+                else
+                {
+                    obj[i] = (GameObject)Instantiate(hammerBro, new Vector3(10f, -0.5f, 15f), hammerBro.transform.rotation);
+                    obj[i].transform.Rotate(0, 180, 0);
+                }
+                obj[i].transform.parent = transform;
+                transform.GetChild(i).gameObject.GetComponent<Animator>().SetBool("IsThrowing", true);
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "LEVEL4") {
+            obj = new GameObject[2];
+
+            for (int i = 0; i < 2; ++i)
+            {
+                if (i % 2 == 0)
+                {
+                    obj[i] = (GameObject)Instantiate(hammerBro, new Vector3(-8f, 2.9f, 63f), hammerBro.transform.rotation);
+                    obj[i].transform.Rotate(0, 90, 0);
+
+                }
+                else
+                {
+                    obj[i] = (GameObject)Instantiate(hammerBro, new Vector3(8f, 2.9f, 63f), hammerBro.transform.rotation);
+                    obj[i].transform.Rotate(0, 90, 0);
+                }
+                obj[i].transform.parent = transform;
+                transform.GetChild(i).gameObject.GetComponent<Animator>().SetBool("IsThrowing", true);
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "LEVEL5") { }
     }
 
     // Update is called once per frame

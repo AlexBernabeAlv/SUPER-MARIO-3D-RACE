@@ -970,9 +970,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5296064409757615305}
+  - component: {fileID: 1463447057536985574}
   m_Layer: 0
   m_Name: HammerBro
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -994,6 +995,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!95 &1463447057536985574
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4770638195748593267}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: fcd87b0ce15d74745a6ee344c6cbe648, type: 3}
+  m_Controller: {fileID: 9100000, guid: 02d87b49e241d32458f74a8c3b3c2e06, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5542521032748114276
 GameObject:
   m_ObjectHideFlags: 0

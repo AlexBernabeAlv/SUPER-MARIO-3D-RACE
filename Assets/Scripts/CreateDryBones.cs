@@ -76,153 +76,157 @@ public class CreateDryBones : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < obj.Length; ++i)
+        if (SceneManager.GetActiveScene().name == "LEVEL1")
         {
-            if (changeDirection)
+            for (int i = 0; i < obj.Length; ++i)
             {
-                if (i % 2 == 0)
+                if (changeDirection)
                 {
-                    if (direction[i] == 0)
+                    if (i % 2 == 0)
                     {
-                        if (obj[i].transform.rotation.eulerAngles.y <= 270)
+                        if (direction[i] == 0)
                         {
-                            obj[i].transform.Rotate(0, turnSpeed * Time.deltaTime, 0);
+                            if (obj[i].transform.rotation.eulerAngles.y <= 270)
+                            {
+                                obj[i].transform.Rotate(0, turnSpeed * Time.deltaTime, 0);
+                            }
+                            else
+                            {
+                                changeDirection = false;
+                                direction[i]++;
+                            }
                         }
-                        else
+                        else if (direction[i] == 1)
                         {
-                            changeDirection = false;
-                            direction[i]++;
+                            if (obj[i].transform.rotation.eulerAngles.y > 270)
+                            {
+                                obj[i].transform.Rotate(0, turnSpeed * Time.deltaTime, 0);
+                            }
+                            else
+                            {
+                                changeDirection = false;
+                                direction[i]++;
+                            }
                         }
+                        else if (direction[i] == 2)
+                        {
+                            if (obj[i].transform.rotation.eulerAngles.y <= 90)
+                            {
+                                obj[i].transform.Rotate(0, turnSpeed * Time.deltaTime, 0);
+                            }
+                            else
+                            {
+                                changeDirection = false;
+                                direction[i]++;
+                            }
+                        }
+                        else if (direction[i] == 3)
+                        {
+                            if (obj[i].transform.rotation.eulerAngles.y <= 180)
+                            {
+                                obj[i].transform.Rotate(0, turnSpeed * Time.deltaTime, 0);
+                            }
+                            else
+                            {
+                                changeDirection = false;
+                                direction[i]++;
+                            }
+                        }
+                        else direction[i] = 0;
                     }
-                    else if (direction[i] == 1)
+                    else
                     {
-                        if (obj[i].transform.rotation.eulerAngles.y > 270)
+                        if (direction[i] == 0)
                         {
-                            obj[i].transform.Rotate(0, turnSpeed * Time.deltaTime, 0);
+                            if (obj[i].transform.rotation.eulerAngles.y >= 90)
+                            {
+                                obj[i].transform.Rotate(0, -turnSpeed * Time.deltaTime, 0);
+                            }
+                            else
+                            {
+                                changeDirection = false;
+                                direction[i]++;
+                            }
                         }
-                        else
+                        else if (direction[i] == 1)
                         {
-                            changeDirection = false;
-                            direction[i]++;
+                            if (obj[i].transform.rotation.eulerAngles.y < 90)
+                            {
+                                obj[i].transform.Rotate(0, -turnSpeed * Time.deltaTime, 0);
+                            }
+                            else
+                            {
+                                changeDirection = false;
+                                direction[i]++;
+                            }
                         }
+                        else if (direction[i] == 2)
+                        {
+                            if (obj[i].transform.rotation.eulerAngles.y >= 270)
+                            {
+                                obj[i].transform.Rotate(0, -turnSpeed * Time.deltaTime, 0);
+                            }
+                            else
+                            {
+                                changeDirection = false;
+                                direction[i]++;
+                            }
+                        }
+                        else if (direction[i] == 3)
+                        {
+                            if (obj[i].transform.rotation.eulerAngles.y >= 180)
+                            {
+                                obj[i].transform.Rotate(0, -turnSpeed * Time.deltaTime, 0);
+                            }
+                            else
+                            {
+                                changeDirection = false;
+                                direction[i]++;
+                            }
+                        }
+                        else direction[i] = 0;
                     }
-                    else if (direction[i] == 2)
-                    {
-                        if (obj[i].transform.rotation.eulerAngles.y <= 90)
-                        {
-                            obj[i].transform.Rotate(0, turnSpeed * Time.deltaTime, 0);
-                        }
-                        else
-                        {
-                            changeDirection = false;
-                            direction[i]++;
-                        }
-                    }
-                    else if (direction[i] == 3)
-                    {
-                        if (obj[i].transform.rotation.eulerAngles.y <= 180)
-                        {
-                            obj[i].transform.Rotate(0, turnSpeed * Time.deltaTime, 0);
-                        }
-                        else
-                        {
-                            changeDirection = false;
-                            direction[i]++;
-                        }
-                    }
-                    else direction[i] = 0;
                 }
                 else
                 {
                     if (direction[i] == 0)
                     {
-                        if (obj[i].transform.rotation.eulerAngles.y >= 90)
-                        {
-                            obj[i].transform.Rotate(0, -turnSpeed * Time.deltaTime, 0);
-                        }
-                        else
-                        {
-                            changeDirection = false;
-                            direction[i]++;
-                        }
+                        if (obj[i].transform.position.z > 9) obj[i].transform.Translate(-transform.forward * runSpeed * Time.deltaTime, Space.World);
+                        else changeDirection = true;
                     }
                     else if (direction[i] == 1)
                     {
-                        if (obj[i].transform.rotation.eulerAngles.y < 90)
+                        if (i % 2 == 0)
                         {
-                            obj[i].transform.Rotate(0, -turnSpeed * Time.deltaTime, 0);
+                            if (obj[i].transform.position.x > -8) obj[i].transform.Translate(-transform.right * runSpeed * Time.deltaTime, Space.World);
+                            else changeDirection = true;
                         }
                         else
                         {
-                            changeDirection = false;
-                            direction[i]++;
+                            if (obj[i].transform.position.x < 8) obj[i].transform.Translate(transform.right * runSpeed * Time.deltaTime, Space.World);
+                            else changeDirection = true;
                         }
                     }
                     else if (direction[i] == 2)
                     {
-                        if (obj[i].transform.rotation.eulerAngles.y >= 270)
-                        {
-                            obj[i].transform.Rotate(0, -turnSpeed * Time.deltaTime, 0);
-                        }
-                        else
-                        {
-                            changeDirection = false;
-                            direction[i]++;
-                        }
+                        if (obj[i].transform.position.z < 14) obj[i].transform.Translate(transform.forward * runSpeed * Time.deltaTime, Space.World);
+                        else changeDirection = true;
                     }
                     else if (direction[i] == 3)
                     {
-                        if (obj[i].transform.rotation.eulerAngles.y >= 180)
+                        if (i % 2 == 0)
                         {
-                            obj[i].transform.Rotate(0, -turnSpeed * Time.deltaTime, 0);
+                            if (obj[i].transform.position.x < -3) obj[i].transform.Translate(transform.right * runSpeed * Time.deltaTime, Space.World);
+                            else changeDirection = true;
                         }
                         else
                         {
-                            changeDirection = false;
-                            direction[i]++;
+                            if (obj[i].transform.position.x > 3) obj[i].transform.Translate(-transform.right * runSpeed * Time.deltaTime, Space.World);
+                            else changeDirection = true;
                         }
                     }
                     else direction[i] = 0;
                 }
-            }
-            else
-            {
-                if (direction[i] == 0)
-                {
-                    if (obj[i].transform.position.z > 9) obj[i].transform.Translate(-transform.forward * runSpeed * Time.deltaTime, Space.World);
-                    else changeDirection = true;
-                }
-                else if (direction[i] == 1)
-                {
-                    if(i%2 == 0)
-                    {
-                        if (obj[i].transform.position.x > -8) obj[i].transform.Translate(-transform.right * runSpeed * Time.deltaTime, Space.World);
-                        else changeDirection = true;
-                    } else
-                    {
-                        if (obj[i].transform.position.x < 8) obj[i].transform.Translate(transform.right * runSpeed * Time.deltaTime, Space.World);
-                        else changeDirection = true;
-                    }
-                }
-                else if (direction[i] == 2)
-                {
-                    if (obj[i].transform.position.z < 14) obj[i].transform.Translate(transform.forward * runSpeed * Time.deltaTime, Space.World);
-                    else changeDirection = true;
-                }
-                else if (direction[i] == 3)
-                {
-                    if (i % 2 == 0)
-                    {
-                        if (obj[i].transform.position.x < -3) obj[i].transform.Translate(transform.right * runSpeed * Time.deltaTime, Space.World);
-                        else changeDirection = true;
-                    }
-                    else
-                    {
-                        if (obj[i].transform.position.x > 3) obj[i].transform.Translate(-transform.right * runSpeed * Time.deltaTime, Space.World);
-                        else changeDirection = true;
-                    }
-                }
-                else direction[i] = 0;
             }
         }
     }
