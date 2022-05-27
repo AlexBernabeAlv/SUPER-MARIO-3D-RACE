@@ -10,6 +10,7 @@ TagManager:
   - PositionRight
   - Odyssey
   - Coin
+  - Bullet
   layers:
   - Default
   - TransparentFX

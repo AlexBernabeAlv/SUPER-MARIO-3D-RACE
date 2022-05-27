@@ -38,6 +38,10 @@ public class Player2 : MonoBehaviour
             Destroy(col.gameObject);
             AudioSource.PlayClipAtPoint(coinSound, transform.position, 0.05f);
         }
+        if (col.gameObject.tag == "Bullet")
+        {
+            restart = true;
+        }
     }
 
     private void OnCollisionEnter(Collision col) {
@@ -46,6 +50,11 @@ public class Player2 : MonoBehaviour
 
     static public bool isWinner() {
         return winner;
+    }
+
+    static public void setIsWinner(bool isWinner)
+    {
+        winner = isWinner;
     }
 
     public float getPlayerZ() {

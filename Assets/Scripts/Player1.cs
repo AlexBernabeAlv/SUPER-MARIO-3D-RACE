@@ -38,6 +38,10 @@ public class Player1 : MonoBehaviour {
             Destroy(col.gameObject);
             AudioSource.PlayClipAtPoint(coinSound, transform.position, 0.05f);
         }
+        if (col.gameObject.tag == "Bullet")
+        {
+            restart = true;
+        }
     }
 
     private void OnCollisionEnter(Collision col) {
@@ -50,6 +54,11 @@ public class Player1 : MonoBehaviour {
 
     static public bool isWinner(){
         return winner;
+    }
+
+    static public void setIsWinner(bool isWinner)
+    {
+        winner = isWinner;
     }
 
     // Start is called before the first frame update

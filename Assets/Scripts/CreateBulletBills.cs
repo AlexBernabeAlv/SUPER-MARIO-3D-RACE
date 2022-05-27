@@ -10,6 +10,15 @@ public class CreateBulletBills : MonoBehaviour
     public float runSpeed;
     GameObject[] obj;
 
+    private void OnCollisionEnter(Collision col)
+    {
+        Debug.Log("Choca");
+        if (col.collider.tag == "Ground" || col.collider.tag == "Player")
+        {
+            transform.position = new Vector3(-16.75f, 0.25f, 66.5f + 5f);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +41,6 @@ public class CreateBulletBills : MonoBehaviour
                     obj[i].transform.Rotate(0, 180, 0);
                 }
                 obj[i].transform.parent = transform;
-                //transform.GetChild(i).gameObject.GetComponent<Animator>().SetBool("IsRunning", true);
             }
         }
         else if (SceneManager.GetActiveScene().name == "LEVEL4")
@@ -54,7 +62,6 @@ public class CreateBulletBills : MonoBehaviour
                     obj[i].transform.Rotate(0, 90, 0);
                 }
                 obj[i].transform.parent = transform;
-                //transform.GetChild(i).gameObject.GetComponent<Animator>().SetBool("IsRunning", true);
             }
         }
         else if (SceneManager.GetActiveScene().name == "LEVEL5") { }
@@ -63,6 +70,10 @@ public class CreateBulletBills : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        for (int i = 0; i < 6; ++i)
+        {
+            if (i % 2 == 0) obj[i].transform.Translate(transform.right * runSpeed * Time.deltaTime, Space.World);
+            else obj[i].transform.Translate(-transform.right * runSpeed * Time.deltaTime, Space.World);
+        }
     }
 }
