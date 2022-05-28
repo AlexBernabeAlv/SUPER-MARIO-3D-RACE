@@ -22,6 +22,13 @@ public class CreateSuperPiranha : MonoBehaviour
             obj.transform.parent = transform;
             transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("IsRunning", true);
         }
+        else if (SceneManager.GetActiveScene().name == "LEVEL5")
+        {
+            obj = new GameObject();
+            obj = (GameObject)Instantiate(superPiranha, new Vector3(0f, -0.5f, 40f), superPiranha.transform.rotation);
+            obj.transform.parent = transform;
+            transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("IsRunning", true);
+        }
     }
     // Update is called once per frame
     void Update()

@@ -22,15 +22,17 @@ public class CreateBulletBills : MonoBehaviour
             {
                 if (i % 2 == 0)
                 {
-                    if (i < 6) obj[i] = (GameObject)Instantiate(bulletBill, new Vector3(-16.75f + 5 * i, 0.25f, 66.5f + i * 5), bulletBill.transform.rotation);
-                    else if (i < 12) obj[i] = (GameObject)Instantiate(bulletBill, new Vector3(-19.75f + 5 * (i - 6), 0.25f, 66.5f + (i - 6) * 5), bulletBill.transform.rotation);
-                    else obj[i] = (GameObject)Instantiate(bulletBill, new Vector3(-22.75f + 5 * (i - 12), 0.25f, 66.5f + (i - 12) * 5), bulletBill.transform.rotation);
+                    if (i < 6) obj[i] = (GameObject)Instantiate(bulletBill, new Vector3(-16.75f + 5 * i, 0.75f, 66.5f + i * 5), bulletBill.transform.rotation);
+                    else if (i < 12) obj[i] = (GameObject)Instantiate(bulletBill, new Vector3(-19.75f + 5 * (i - 6), 0.75f, 66.5f + (i - 6) * 5), bulletBill.transform.rotation);
+                    else obj[i] = (GameObject)Instantiate(bulletBill, new Vector3(-22.75f + 5 * (i - 12), 0.75f, 66.5f + (i - 12) * 5), bulletBill.transform.rotation);
+                    obj[i].transform.localScale += new Vector3(0.04f, 0.04f, 0.04f);
                 }
                 else
                 {
-                    if (i < 6) obj[i] = (GameObject)Instantiate(bulletBill, new Vector3(16.75f + 5 * (i - 1), 0.25f, 66.5f + (i - 1) * 5), bulletBill.transform.rotation);
-                    else if (i < 12) obj[i] = (GameObject)Instantiate(bulletBill, new Vector3(19.75f + 5 * (i - 7), 0.25f, 66.5f + (i - 7) * 5), bulletBill.transform.rotation);
-                    else obj[i] = (GameObject)Instantiate(bulletBill, new Vector3(22.75f + 5 * (i - 13), 0.25f, 66.5f + (i - 13) * 5), bulletBill.transform.rotation);
+                    if (i < 6) obj[i] = (GameObject)Instantiate(bulletBill, new Vector3(16.75f + 5 * (i - 1), 0.75f, 66.5f + (i - 1) * 5), bulletBill.transform.rotation);
+                    else if (i < 12) obj[i] = (GameObject)Instantiate(bulletBill, new Vector3(19.75f + 5 * (i - 7), 0.75f, 66.5f + (i - 7) * 5), bulletBill.transform.rotation);
+                    else obj[i] = (GameObject)Instantiate(bulletBill, new Vector3(22.75f + 5 * (i - 13), 0.75f, 66.5f + (i - 13) * 5), bulletBill.transform.rotation);
+                    obj[i].transform.localScale += new Vector3(0.04f, 0.04f, 0.04f);
                     obj[i].transform.Rotate(0, 180, 0);
                 }
                 obj[i].transform.parent = transform;
@@ -76,9 +78,9 @@ public class CreateBulletBills : MonoBehaviour
                     if (obj[i].transform.position.x > 0)
                     {
                        
-                        if (i < 6) obj[i].transform.position = new Vector3(-16.75f, 0.25f, 66.5f + i * 5);
-                        else if (i < 12) obj[i].transform.position = new Vector3(-16.75f, 0.25f, 66.5f + (i - 6) * 5);
-                        else obj[i].transform.position = new Vector3(-16.75f, 0.25f, 66.5f + (i - 12) * 5);
+                        if (i < 6) obj[i].transform.position = new Vector3(-16.75f, 0.75f, 66.5f + i * 5);
+                        else if (i < 12) obj[i].transform.position = new Vector3(-16.75f, 0.75f, 66.5f + (i - 6) * 5);
+                        else obj[i].transform.position = new Vector3(-16.75f, 0.75f, 66.5f + (i - 12) * 5);
                     }
                     obj[i].transform.Translate(transform.right * runSpeed * Time.deltaTime, Space.World);
                 }
@@ -86,9 +88,9 @@ public class CreateBulletBills : MonoBehaviour
                 {
                     if (obj[i].transform.position.x < 0)
                     {
-                        if (i < 6) obj[i].transform.position = new Vector3(16.75f, 0.25f, 66.5f + (i - 1) * 5);
-                        else if (i < 12) obj[i].transform.position = new Vector3(16.75f, 0.25f, 66.5f + (i - 7) * 5);
-                        else obj[i].transform.position = new Vector3(16.75f, 0.25f, 66.5f + (i - 13) * 5);
+                        if (i < 6) obj[i].transform.position = new Vector3(16.75f, 0.75f, 66.5f + (i - 1) * 5);
+                        else if (i < 12) obj[i].transform.position = new Vector3(16.75f, 0.75f, 66.5f + (i - 7) * 5);
+                        else obj[i].transform.position = new Vector3(16.75f, 0.75f, 66.5f + (i - 13) * 5);
                     }
                     obj[i].transform.Translate(-transform.right * runSpeed * Time.deltaTime, Space.World);
                 }

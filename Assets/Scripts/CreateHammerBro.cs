@@ -53,7 +53,26 @@ public class CreateHammerBro : MonoBehaviour
                 transform.GetChild(i).gameObject.GetComponent<Animator>().SetBool("IsThrowing", true);
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL5") { }
+        else if (SceneManager.GetActiveScene().name == "LEVEL5")
+        {
+            obj = new GameObject[6];
+
+            for (int i = 0; i < 6; ++i)
+            {
+                if (i % 2 == 0)
+                {
+                    obj[i] = (GameObject)Instantiate(hammerBro, new Vector3(-11f, 3f, 50f + i * 5f), hammerBro.transform.rotation);
+
+                }
+                else
+                {
+                    obj[i] = (GameObject)Instantiate(hammerBro, new Vector3(11f, 3f, 50f + (i - 1) * 5f), hammerBro.transform.rotation);
+                    obj[i].transform.Rotate(0, 180, 0);
+                }
+                obj[i].transform.parent = transform;
+                transform.GetChild(i).gameObject.GetComponent<Animator>().SetBool("IsThrowing", true);
+            }
+        }
     }
 
     // Update is called once per frame

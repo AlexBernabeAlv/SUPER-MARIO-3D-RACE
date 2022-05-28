@@ -70,7 +70,26 @@ public class CreateDryBones : MonoBehaviour
             //}
         }
         else if (SceneManager.GetActiveScene().name == "LEVEL4") { }
-        else if (SceneManager.GetActiveScene().name == "LEVEL5") { }
+        else if (SceneManager.GetActiveScene().name == "LEVEL5")
+        {
+            obj = new GameObject[4];
+            direction = new int[4];
+            for (int i = 0; i < 4; ++i)
+            {
+                if (i % 2 == 0)
+                {
+                    obj[i] = (GameObject)Instantiate(dryBones, new Vector3(-8.0f, 0.7f + i * 0.55f, 85.0f + i * 4.0f), dryBones.transform.rotation);
+                    obj[i].transform.Rotate(0, 90, 0);
+                }
+                else
+                {
+                    obj[i] = (GameObject)Instantiate(dryBones, new Vector3(8.0f, 0.7f + (i - 1) * 0.55f, 85.0f + (i - 1) * 4.0f), dryBones.transform.rotation);
+                    obj[i].transform.Rotate(0, -90, 0);
+                }
+                obj[i].transform.parent = transform;
+                transform.GetChild(i).gameObject.GetComponent<Animator>().SetBool("IsRunning", true);
+            }
+        }
     }
 
     // Update is called once per frame

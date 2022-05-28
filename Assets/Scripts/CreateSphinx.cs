@@ -15,10 +15,10 @@ public class CreateSphinx : MonoBehaviour
             obj = new GameObject[4];
             for (int i = 0; i < 4; ++i)
             {
-                if (i % 2 == 0) obj[i] = (GameObject)Instantiate(sphinx, new Vector3(-8.0f, -1.0f, 30.0f + i * 10), sphinx.transform.rotation);
+                if (i % 2 == 0) obj[i] = (GameObject)Instantiate(sphinx, new Vector3(-4.6f, -0.5f, 5.0f + (i + 1) * 10f), sphinx.transform.rotation);
                 else
                 {
-                    obj[i] = (GameObject)Instantiate(sphinx, new Vector3(8.0f, -1.0f, 30.0f + i * 10), sphinx.transform.rotation);
+                    obj[i] = (GameObject)Instantiate(sphinx, new Vector3(4.6f, -0.5f, 5.0f + i * 10f), sphinx.transform.rotation);
                     obj[i].transform.Rotate(0, 180, 0);
                 }
                 obj[i].transform.parent = transform;
