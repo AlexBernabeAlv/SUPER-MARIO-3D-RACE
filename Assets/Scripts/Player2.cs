@@ -30,7 +30,7 @@ public class Player2 : MonoBehaviour
      };
 
     private void OnTriggerEnter(Collider col) {
-        if (col.gameObject.tag == "Enemy" && !godMode) restart = true;
+        if ((col.gameObject.tag == "Enemy" || (col.gameObject.tag == "Water")) && !godMode) restart = true;
         if (col.gameObject.tag == "Odyssey") winner = true;
         if (col.gameObject.tag == "Coin")
         {
@@ -86,9 +86,9 @@ public class Player2 : MonoBehaviour
 
         if (restart)
         {
-            AudioSource.PlayClipAtPoint(whineSound, transform.position);
             transform.position = lastCheckpointPosition;
             transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+            AudioSource.PlayClipAtPoint(whineSound, transform.position);
             restart = false;
         }
 

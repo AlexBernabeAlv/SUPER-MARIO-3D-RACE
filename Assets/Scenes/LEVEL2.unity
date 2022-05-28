@@ -736,6 +736,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cheepcheep: {fileID: 6679813802274150573, guid: 9d67180327c6a1e4a8fe13468ff319eb, type: 3}
+  runSpeed: 7
+  jumpHeight: 9
 --- !u!4 &384818812
 Transform:
   m_ObjectHideFlags: 0
@@ -4399,6 +4401,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   superPiranha: {fileID: 1829117694870274347, guid: 0b10407e92bf25c4e8c4a2c1e323f238, type: 3}
+  runSpeed: 2
+  turnSpeed: 90
 --- !u!4 &634527205
 Transform:
   m_ObjectHideFlags: 0
@@ -8361,7 +8365,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh68952
+  m_Name: pb_Mesh192050
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8535,7 +8539,7 @@ GameObject:
   - component: {fileID: 1801137843}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8548,10 +8552,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801137842}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1602431068}
 --- !u!33 &1801137844

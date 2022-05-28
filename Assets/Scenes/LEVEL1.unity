@@ -682,7 +682,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 9.1835e-41, z: 1.8e-43, w: -7.663532e+29}
+  m_BoundingSphereOverride: {x: 4.5905e-41, y: 1.79546e-16, z: 4.5905e-41, w: 9.403955e-38}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -1722,7 +1722,7 @@ GameObject:
   - component: {fileID: 683223485}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2259,6 +2259,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cheepcheep: {fileID: 6679813802274150573, guid: 9d67180327c6a1e4a8fe13468ff319eb, type: 3}
+  runSpeed: 7
+  jumpHeight: 9
 --- !u!1 &844035975 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3980712795736545282, guid: 812daab4966ee9a4aa84f4593b204a32, type: 3}
@@ -10772,7 +10774,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25020
+  m_Name: pb_Mesh190458
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11073,6 +11075,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   superPiranha: {fileID: 1829117694870274347, guid: 0b10407e92bf25c4e8c4a2c1e323f238, type: 3}
+  runSpeed: 2
+  turnSpeed: 90
 --- !u!1 &1733294809
 GameObject:
   m_ObjectHideFlags: 0

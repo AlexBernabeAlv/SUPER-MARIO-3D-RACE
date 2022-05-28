@@ -32,12 +32,12 @@ public class CreateBlocks : MonoBehaviour
         {
         }
         else if (SceneManager.GetActiveScene().name == "LEVEL4") { }
-        else if (SceneManager.GetActiveScene().name == "LEVEL5") { }
+        else if (SceneManager.GetActiveScene().name == "LEVEL5") {
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
 }

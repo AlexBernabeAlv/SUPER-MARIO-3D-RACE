@@ -30471,8 +30471,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cheepcheep: {fileID: 6679813802274150573, guid: 9d67180327c6a1e4a8fe13468ff319eb, type: 3}
-  runSpeed: 5
-  jumpHeight: 10
+  runSpeed: 7
+  jumpHeight: 9
 --- !u!4 &1057904980
 Transform:
   m_ObjectHideFlags: 0
@@ -34256,7 +34256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletBill: {fileID: 4058610697265033574, guid: 044c10792a0f2fe4dbb7a82a2bb3fbd6, type: 3}
-  runSpeed: 4
+  runSpeed: 8
 --- !u!4 &1821504112
 Transform:
   m_ObjectHideFlags: 0
@@ -37450,7 +37450,7 @@ GameObject:
   - component: {fileID: 2128936140}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

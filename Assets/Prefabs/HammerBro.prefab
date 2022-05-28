@@ -971,6 +971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5296064409757615305}
   - component: {fileID: 1463447057536985574}
+  - component: {fileID: 7388993395611143211}
   m_Layer: 0
   m_Name: HammerBro
   m_TagString: Enemy
@@ -986,7 +987,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4770638195748593267}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -5.32, y: -0.5, z: 5.32}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1015,6 +1016,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &7388993395611143211
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4770638195748593267}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.11602236
+  m_Height: 0.3935012
+  m_Direction: 1
+  m_Center: {x: 0.03149278, y: 0.1802773, z: 0.05194663}
 --- !u!1 &5542521032748114276
 GameObject:
   m_ObjectHideFlags: 0
