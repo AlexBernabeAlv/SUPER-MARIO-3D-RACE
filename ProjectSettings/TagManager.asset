@@ -11,6 +11,7 @@ TagManager:
   - Odyssey
   - Coin
   - Bullet
+  - Water
   layers:
   - Default
   - TransparentFX

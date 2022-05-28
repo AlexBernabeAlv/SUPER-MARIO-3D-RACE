@@ -15,7 +15,8 @@ public class CreateBulletBills : MonoBehaviour
         Debug.Log("Choca");
         if (col.collider.tag == "Ground" || col.collider.tag == "Player")
         {
-            transform.position = new Vector3(-16.75f, 0.25f, 66.5f + 5f);
+        if (SceneManager.GetActiveScene().name == "LEVEL3") transform.position = new Vector3(-16.75f, 0.25f, 66.5f + 5f);
+        //else if (SceneManager.GetActiveScene().name == "LEVEL4") transform.position = new Vector3(-16.75f, 0.25f, 66.5f + 5f);
         }
     }
 
@@ -70,10 +71,18 @@ public class CreateBulletBills : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < 6; ++i)
+        if (SceneManager.GetActiveScene().name == "LEVEL3")
         {
-            if (i % 2 == 0) obj[i].transform.Translate(transform.right * runSpeed * Time.deltaTime, Space.World);
-            else obj[i].transform.Translate(-transform.right * runSpeed * Time.deltaTime, Space.World);
+            for (int i = 0; i < 6; ++i)
+            {
+                if (i % 2 == 0) obj[i].transform.Translate(transform.right * runSpeed * Time.deltaTime, Space.World);
+                else obj[i].transform.Translate(-transform.right * runSpeed * Time.deltaTime, Space.World);
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "LEVEL4")
+        {
+        for (int i = 0; i < 6; ++i)
+            obj[i].transform.Translate(-transform.forward * runSpeed * Time.deltaTime, Space.World);
         }
     }
 }

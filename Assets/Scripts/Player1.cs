@@ -45,14 +45,14 @@ public class Player1 : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision col) {
-        if(col.collider.tag == "Ground" || col.gameObject.tag == "Odyssey") isGrounded = true;
+        if (col.collider.tag == "Ground" || col.gameObject.tag == "Odyssey") isGrounded = true;
     }
 
     public float getPlayerZ() {
         return transform.position.z;
     }
 
-    static public bool isWinner(){
+    static public bool isWinner() {
         return winner;
     }
 
@@ -72,10 +72,13 @@ public class Player1 : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
-        for(int i = 1; i <= 6; ++i) {
-        if (Input.GetKeyDown(keyCodes[i-1]))
-            SceneManager.LoadScene("LEVEL"+i);
+    void Update(){
+        if (SceneManager.GetActiveScene().name == "LEVEL3") jumpHeight = 7f;
+        else jumpHeight = 5f;
+
+        for (int i = 1; i <= 6; ++i) {
+            if (Input.GetKeyDown(keyCodes[i - 1]))
+                SceneManager.LoadScene("LEVEL" + i);
         }
 
         if (Input.GetKeyDown(KeyCode.G)) godMode = !godMode;
@@ -101,7 +104,7 @@ public class Player1 : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.E) && isGrounded)
         {
-            rb.AddForce(new Vector3(0f,1f,0f) * jumpHeight, ForceMode.Impulse);
+            rb.AddForce(new Vector3(0f, 1f, 0f) * jumpHeight, ForceMode.Impulse);
             isGrounded = false;
         }
 

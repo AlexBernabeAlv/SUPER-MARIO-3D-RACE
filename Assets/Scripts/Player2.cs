@@ -73,6 +73,9 @@ public class Player2 : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+        if (SceneManager.GetActiveScene().name == "LEVEL3") jumpHeight = 7f;
+        else jumpHeight = 5f;
+
         for (int i = 1; i <= 6; ++i)
         {
             if (Input.GetKeyDown(keyCodes[i - 1]))

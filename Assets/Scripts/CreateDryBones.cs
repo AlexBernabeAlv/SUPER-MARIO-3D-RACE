@@ -56,13 +56,13 @@ public class CreateDryBones : MonoBehaviour
             {
                 if (i % 2 == 0)
                 {
-                    obj[i] = (GameObject)Instantiate(dryBones, new Vector3(-3.6f, -2.5f, 42f + i * 5), dryBones.transform.rotation);
+                    obj[i] = (GameObject)Instantiate(dryBones, new Vector3(-3.6f, -2f, 42f + i * 5), dryBones.transform.rotation);
                     obj[i].transform.Rotate(0, -90, 0);
                 }
                 else
                 {
 
-                    obj[i] = (GameObject)Instantiate(dryBones, new Vector3(3.6f, -2.5f, 42f + (i-1) * 5), dryBones.transform.rotation);
+                    obj[i] = (GameObject)Instantiate(dryBones, new Vector3(3.6f, -2f, 42f + (i - 1) * 5), dryBones.transform.rotation);
                     obj[i].transform.Rotate(0, 90, 0);
                 }
                 obj[i].transform.parent = transform;
