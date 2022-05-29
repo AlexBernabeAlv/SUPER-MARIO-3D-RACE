@@ -10,7 +10,7 @@ public class CreateSphinx : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "LEVEL5")
+        if (SceneManager.GetActiveScene().name == "LEVEL3")
         {
             obj = new GameObject[4];
             for (int i = 0; i < 4; ++i)

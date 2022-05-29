@@ -15,7 +15,7 @@ public class CreateCheepCheep : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "LEVEL3")
+        if (SceneManager.GetActiveScene().name == "LEVEL5")
         {
             isGrounded = new bool[2];
             obj = new GameObject[2];
@@ -35,7 +35,7 @@ public class CreateCheepCheep : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "LEVEL3")
+        if (SceneManager.GetActiveScene().name == "LEVEL5")
         {
             for (int i = 0; i < 2; ++i)
             {

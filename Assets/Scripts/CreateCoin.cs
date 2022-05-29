@@ -11,7 +11,7 @@ public class CreateCoin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "LEVEL1")
+        if (SceneManager.GetActiveScene().name == "LEVEL4")
         {
             obj = new GameObject[12];
             for (int i = 0; i < obj.Length; ++i)
@@ -21,10 +21,10 @@ public class CreateCoin : MonoBehaviour
                 obj[i].transform.parent = transform;
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL2") {
+        else if (SceneManager.GetActiveScene().name == "LEVEL1") {
 
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL3") {
+        else if (SceneManager.GetActiveScene().name == "LEVEL5") {
             obj = new GameObject[10];
             for (int i = 0; i < obj.Length; ++i)
             {
@@ -32,8 +32,8 @@ public class CreateCoin : MonoBehaviour
                 obj[i].transform.parent = transform;
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL4") { }
-        else if (SceneManager.GetActiveScene().name == "LEVEL5") { }
+        else if (SceneManager.GetActiveScene().name == "LEVEL2") { }
+        else if (SceneManager.GetActiveScene().name == "LEVEL3") { }
     }
 
     // Update is called once per frame

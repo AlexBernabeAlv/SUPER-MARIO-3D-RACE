@@ -14,7 +14,7 @@ public class CreateThwomp : MonoBehaviour
     void Start()
     {
         direction = new int[6];
-        if (SceneManager.GetActiveScene().name == "LEVEL1")
+        if (SceneManager.GetActiveScene().name == "LEVEL4")
         {
             obj = new GameObject[6];
             for (int i = 0; i < 6; ++i)
@@ -24,7 +24,7 @@ public class CreateThwomp : MonoBehaviour
                 obj[i].transform.parent = transform;
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL2")
+        else if (SceneManager.GetActiveScene().name == "LEVEL1")
         {
             obj = new GameObject[2];
             for (int i = 0; i < 2; ++i)
@@ -34,8 +34,8 @@ public class CreateThwomp : MonoBehaviour
                 obj[i].transform.parent = transform;
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL3") { }
-        else if (SceneManager.GetActiveScene().name == "LEVEL4")
+        else if (SceneManager.GetActiveScene().name == "LEVEL5") { }
+        else if (SceneManager.GetActiveScene().name == "LEVEL2")
         {
             obj = new GameObject[4];
             for (int i = 0; i < 4; ++i)
@@ -45,7 +45,7 @@ public class CreateThwomp : MonoBehaviour
                 obj[i].transform.parent = transform;
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL5") { }
+        else if (SceneManager.GetActiveScene().name == "LEVEL3") { }
     }
 
     // Update is called once per frame

@@ -17,18 +17,18 @@ public class CreateHammer : MonoBehaviour
     void Start()
     {
         timeBetweenThrows = 3.15f;
-        if (SceneManager.GetActiveScene().name == "LEVEL3") speed = Random.Range(3f, 5f);
-        else if (SceneManager.GetActiveScene().name == "LEVEL4") speed = Random.Range(3f, 6f);
-        else if (SceneManager.GetActiveScene().name == "LEVEL5") speed = Random.Range(3f, 6f);
+        if (SceneManager.GetActiveScene().name == "LEVEL5") speed = Random.Range(3f, 5f);
+        else if (SceneManager.GetActiveScene().name == "LEVEL2") speed = Random.Range(3f, 6f);
+        else if (SceneManager.GetActiveScene().name == "LEVEL3") speed = Random.Range(3f, 6f);
         obj = new GameObject();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "LEVEL3") speed = Random.Range(3f, 5f);
-        else if (SceneManager.GetActiveScene().name == "LEVEL4") speed = Random.Range(3f, 6f);
-        else if (SceneManager.GetActiveScene().name == "LEVEL5") speed = Random.Range(3f, 6f);
+        if (SceneManager.GetActiveScene().name == "LEVEL5") speed = Random.Range(3f, 5f);
+        else if (SceneManager.GetActiveScene().name == "LEVEL2") speed = Random.Range(3f, 6f);
+        else if (SceneManager.GetActiveScene().name == "LEVEL3") speed = Random.Range(3f, 6f);
         timeToNextThrow -= Time.deltaTime;
         if (timeToNextThrow <= 0f)
         {

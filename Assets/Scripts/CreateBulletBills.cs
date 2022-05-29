@@ -13,9 +13,9 @@ public class CreateBulletBills : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "LEVEL1") { }
-        else if (SceneManager.GetActiveScene().name == "LEVEL2") { }
-        else if (SceneManager.GetActiveScene().name == "LEVEL3")
+        if (SceneManager.GetActiveScene().name == "LEVEL4") { }
+        else if (SceneManager.GetActiveScene().name == "LEVEL1") { }
+        else if (SceneManager.GetActiveScene().name == "LEVEL5")
         {
             obj = new GameObject[18];
             for (int i = 0; i < 18; ++i)
@@ -38,7 +38,7 @@ public class CreateBulletBills : MonoBehaviour
                 obj[i].transform.parent = transform;
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL4")
+        else if (SceneManager.GetActiveScene().name == "LEVEL2")
         {
             obj = new GameObject[6];
             for (int i = 0; i < 6; ++i)
@@ -60,13 +60,13 @@ public class CreateBulletBills : MonoBehaviour
                 obj[i].transform.parent = transform;
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL5") { }
+        else if (SceneManager.GetActiveScene().name == "LEVEL3") { }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "LEVEL3")
+        if (SceneManager.GetActiveScene().name == "LEVEL5")
         {
 
             for (int i = 0; i < obj.Length; ++i)
@@ -96,7 +96,7 @@ public class CreateBulletBills : MonoBehaviour
                 }
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL4")
+        else if (SceneManager.GetActiveScene().name == "LEVEL2")
         {
         for (int i = 0; i < 6; ++i)
             {

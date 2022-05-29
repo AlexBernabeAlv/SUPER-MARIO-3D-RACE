@@ -11,14 +11,14 @@ public class CreateHammerBro : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "LEVEL1")
+        if (SceneManager.GetActiveScene().name == "LEVEL4")
         {
 
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL2") {
+        else if (SceneManager.GetActiveScene().name == "LEVEL1") {
 
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL3") {
+        else if (SceneManager.GetActiveScene().name == "LEVEL5") {
             obj = new GameObject[2];
 
             for (int i = 0; i < 2; ++i)
@@ -33,7 +33,7 @@ public class CreateHammerBro : MonoBehaviour
                 transform.GetChild(i).gameObject.GetComponent<Animator>().SetBool("IsThrowing", true);
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL4") {
+        else if (SceneManager.GetActiveScene().name == "LEVEL2") {
             obj = new GameObject[2];
 
             for (int i = 0; i < 2; ++i)
@@ -53,7 +53,7 @@ public class CreateHammerBro : MonoBehaviour
                 transform.GetChild(i).gameObject.GetComponent<Animator>().SetBool("IsThrowing", true);
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL5")
+        else if (SceneManager.GetActiveScene().name == "LEVEL3")
         {
             obj = new GameObject[6];
 

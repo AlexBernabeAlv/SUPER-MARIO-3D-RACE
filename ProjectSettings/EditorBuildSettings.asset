@@ -18,27 +18,21 @@ EditorBuildSettings:
     path: Assets/Scenes/CREDITS.unity
     guid: 7035a6749c446a642bea64d1ca13eee6
   - enabled: 1
-    path: Assets/Scenes/SETTINGS.unity
-    guid: 5037f7de190a56842ae259db66a91437
+    path: Assets/Scenes/DANCE.unity
+    guid: 159d2bc6ea4a3e749a7a057e0f52dacb
   - enabled: 1
-    path: Assets/Scenes/LEVEL1.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Scenes/LEVEL2.unity
-    guid: 1121e4a046bc142479b8aa617e422965
-  - enabled: 1
-    path: Assets/Scenes/LEVEL3.unity
+    path: Assets/Scenes/LEVEL5.unity
     guid: bc6e0c0b173709d49ab1ee44afdc1eaa
   - enabled: 1
     path: Assets/Scenes/LEVEL4.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/LEVEL3.unity
+    guid: 07ca982442da75c4f824e164c7bd45e3
+  - enabled: 1
+    path: Assets/Scenes/LEVEL2.unity
     guid: 2977ed3cfde2b474b8d340a456d2a366
   - enabled: 1
-    path: Assets/Scenes/LEVEL5.unity
-    guid: d02126aeab3b628489a8a62729ff9927
-  - enabled: 1
-    path: Assets/Scenes/LEVEL6.unity
-    guid: 3e6f6afa70de922459b800e7ddd6dbf6
-  - enabled: 1
-    path: Assets/Scenes/DANCE.unity
-    guid: 159d2bc6ea4a3e749a7a057e0f52dacb
+    path: Assets/Scenes/LEVEL1.unity
+    guid: 1121e4a046bc142479b8aa617e422965
   m_configObjects: {}

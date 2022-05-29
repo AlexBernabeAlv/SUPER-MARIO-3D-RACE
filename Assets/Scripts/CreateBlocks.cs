@@ -11,7 +11,7 @@ public class CreateBlocks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "LEVEL1")
+        if (SceneManager.GetActiveScene().name == "LEVEL4")
         {
             for (int i = 0; i < 25; ++i)
             {
@@ -19,7 +19,7 @@ public class CreateBlocks : MonoBehaviour
                 obj.transform.parent = transform;
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL2")
+        else if (SceneManager.GetActiveScene().name == "LEVEL1")
         {
             for (int i = 0; i < 80; ++i)
             {
@@ -28,11 +28,11 @@ public class CreateBlocks : MonoBehaviour
                 obj.transform.parent = transform;
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL3")
+        else if (SceneManager.GetActiveScene().name == "LEVEL5")
         {
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL4") { }
-        else if (SceneManager.GetActiveScene().name == "LEVEL5") {
+        else if (SceneManager.GetActiveScene().name == "LEVEL2") { }
+        else if (SceneManager.GetActiveScene().name == "LEVEL3") {
         }
     }
 

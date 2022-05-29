@@ -15,7 +15,7 @@ public class CreateCow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "LEVEL4")
+        if (SceneManager.GetActiveScene().name == "LEVEL2")
         {
             obj = new GameObject[2];
             direction = new int[4];
@@ -32,7 +32,7 @@ public class CreateCow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "LEVEL4")
+        if (SceneManager.GetActiveScene().name == "LEVEL2")
         {
             for (int i = 0; i < obj.Length; ++i)
             {

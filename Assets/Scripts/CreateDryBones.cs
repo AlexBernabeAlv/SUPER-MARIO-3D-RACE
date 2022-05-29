@@ -16,7 +16,7 @@ public class CreateDryBones : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "LEVEL1")
+        if (SceneManager.GetActiveScene().name == "LEVEL4")
         {
             obj = new GameObject[2];
             direction = new int[2];
@@ -28,7 +28,7 @@ public class CreateDryBones : MonoBehaviour
                 transform.GetChild(i).gameObject.GetComponent<Animator>().SetBool("IsRunning", true);
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL2")
+        else if (SceneManager.GetActiveScene().name == "LEVEL1")
         {
             obj = new GameObject[4];
             direction = new int[4];
@@ -48,7 +48,7 @@ public class CreateDryBones : MonoBehaviour
                 transform.GetChild(i).gameObject.GetComponent<Animator>().SetBool("IsRunning", true);
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL3")
+        else if (SceneManager.GetActiveScene().name == "LEVEL5")
         {
             //obj = new GameObject[4];
             //direction = new int[4];
@@ -69,8 +69,8 @@ public class CreateDryBones : MonoBehaviour
             //    transform.GetChild(i).gameObject.GetComponent<Animator>().SetBool("IsRunning", true);
             //}
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL4") { }
-        else if (SceneManager.GetActiveScene().name == "LEVEL5")
+        else if (SceneManager.GetActiveScene().name == "LEVEL2") { }
+        else if (SceneManager.GetActiveScene().name == "LEVEL3")
         {
             obj = new GameObject[4];
             direction = new int[4];
@@ -95,7 +95,7 @@ public class CreateDryBones : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "LEVEL1")
+        if (SceneManager.GetActiveScene().name == "LEVEL4")
         {
             for (int i = 0; i < obj.Length; ++i)
             {
