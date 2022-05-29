@@ -9,6 +9,7 @@ public class CreateThwomp : MonoBehaviour
     GameObject[] obj;
     public float fallSpeed = 4f;
     int[] direction;
+    public AudioClip soundEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,7 +56,11 @@ public class CreateThwomp : MonoBehaviour
             if (direction[i] == 0)
             {
                 if (obj[i].transform.position.y > 0) obj[i].transform.Translate(-transform.up * fallSpeed * Time.deltaTime, Space.World);
-                else direction[i] = 1;
+                else
+                {
+                    //AudioSource.PlayClipAtPoint(soundEffect, obj[i].transform.position);
+                    direction[i] = 1;
+                }
             }
             else
             {

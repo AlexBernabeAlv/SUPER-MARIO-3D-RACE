@@ -11,6 +11,7 @@ public class CreateChomp : MonoBehaviour
     GameObject[] obj;
     bool changeDirection = false;
     int[] direction;
+    public AudioClip soundEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +59,7 @@ public class CreateChomp : MonoBehaviour
                             {
                                 changeDirection = false;
                                 direction[i]++;
+                                AudioSource.PlayClipAtPoint(soundEffect, obj[i].transform.position);
                             }
                         }
                         else if (direction[i] == 1)
@@ -67,6 +69,7 @@ public class CreateChomp : MonoBehaviour
                             {
                                 changeDirection = false;
                                 direction[i]++;
+                                //AudioSource.PlayClipAtPoint(soundEffect, obj[i].transform.position);
                             }
                         }
                         else if (direction[i] == 2)
@@ -76,6 +79,7 @@ public class CreateChomp : MonoBehaviour
                             {
                                 changeDirection = false;
                                 direction[i]++;
+                                AudioSource.PlayClipAtPoint(soundEffect, obj[i].transform.position);
                             }
                         }
                         else if (direction[i] == 3)
@@ -85,6 +89,7 @@ public class CreateChomp : MonoBehaviour
                             {
                                 changeDirection = false;
                                 direction[i]++;
+                                //AudioSource.PlayClipAtPoint(soundEffect, obj[i].transform.position);
                             }
                         }
                         else direction[i] = 0;
@@ -98,6 +103,7 @@ public class CreateChomp : MonoBehaviour
                             {
                                 changeDirection = false;
                                 direction[i]++;
+                                //AudioSource.PlayClipAtPoint(soundEffect, obj[i].transform.position);
                             }
                         }
                         else if (direction[i] == 1)
@@ -107,6 +113,7 @@ public class CreateChomp : MonoBehaviour
                             {
                                 changeDirection = false;
                                 direction[i]++;
+                                //AudioSource.PlayClipAtPoint(soundEffect, obj[i].transform.position);
                             }
                         }
                         else if (direction[i] == 2)
@@ -116,6 +123,7 @@ public class CreateChomp : MonoBehaviour
                             {
                                 changeDirection = false;
                                 direction[i]++;
+                                //AudioSource.PlayClipAtPoint(soundEffect, obj[i].transform.position);
                             }
                         }
                         else if (direction[i] == 3)
@@ -125,6 +133,7 @@ public class CreateChomp : MonoBehaviour
                             {
                                 changeDirection = false;
                                 direction[i]++;
+                                //AudioSource.PlayClipAtPoint(soundEffect, obj[i].transform.position);
                             }
                         }
                         else direction[i] = 0;

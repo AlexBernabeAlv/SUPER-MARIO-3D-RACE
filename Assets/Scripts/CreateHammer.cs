@@ -17,16 +17,16 @@ public class CreateHammer : MonoBehaviour
     void Start()
     {
         timeBetweenThrows = 3.15f;
-        if (SceneManager.GetActiveScene().name == "LEVEL3") speed = Random.Range(3f, 4f);
+        if (SceneManager.GetActiveScene().name == "LEVEL3") speed = Random.Range(3f, 5f);
         else if (SceneManager.GetActiveScene().name == "LEVEL4") speed = Random.Range(3f, 6f);
-        else if (SceneManager.GetActiveScene().name == "LEVEL5") speed = Random.Range(3f,6f);
+        else if (SceneManager.GetActiveScene().name == "LEVEL5") speed = Random.Range(3f, 6f);
         obj = new GameObject();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "LEVEL3") speed = Random.Range(3f, 4f);
+        if (SceneManager.GetActiveScene().name == "LEVEL3") speed = Random.Range(3f, 5f);
         else if (SceneManager.GetActiveScene().name == "LEVEL4") speed = Random.Range(3f, 6f);
         else if (SceneManager.GetActiveScene().name == "LEVEL5") speed = Random.Range(3f, 6f);
         timeToNextThrow -= Time.deltaTime;
@@ -40,9 +40,12 @@ public class CreateHammer : MonoBehaviour
             //Debug.Log(rot);
             if (rot[3] > 0) obj.GetComponent<Rigidbody>().velocity = new Vector3(speed, speed * 2f, 0f);
             else if (rot[3] < 0) obj.GetComponent<Rigidbody>().velocity = new Vector3(-speed, speed * 2f, 0f);
-            //AudioSource.PlayClipAtPoint(throwSound, transform.position);
+            AudioSource.PlayClipAtPoint(throwSound, transform.position);
         }
-        obj.transform.Rotate(0, 0, turnSpeed * Time.deltaTime);
-
+        if (obj)
+        {
+            obj.transform.Rotate(0, 0, turnSpeed * Time.deltaTime);
+            if (obj.transform.position.y < -5) Destroy(obj);
+        }
     }
 }

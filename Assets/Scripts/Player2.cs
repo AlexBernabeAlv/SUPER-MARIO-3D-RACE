@@ -30,7 +30,7 @@ public class Player2 : MonoBehaviour
      };
 
     private void OnTriggerEnter(Collider col) {
-        if ((col.gameObject.tag == "Enemy" || (col.gameObject.tag == "Water")) && !godMode) restart = true;
+        if ((col.gameObject.tag == "Enemy" || (col.gameObject.tag == "Water") || (col.gameObject.tag == "Hammer")) && !godMode) restart = true;
         if (col.gameObject.tag == "Odyssey") winner = true;
         if (col.gameObject.tag == "Coin")
         {
@@ -38,8 +38,8 @@ public class Player2 : MonoBehaviour
             Destroy(col.gameObject);
             AudioSource.PlayClipAtPoint(coinSound, transform.position, 0.05f);
         }
-        if (col.gameObject.tag == "Bullet")
-            restart = true;
+        if (col.gameObject.tag == "Hammer") Destroy(col.gameObject);
+        if (col.gameObject.tag == "Bullet" && !godMode) restart = true;
     }
 
     private void OnCollisionEnter(Collision col) {
@@ -74,7 +74,7 @@ public class Player2 : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "LEVEL3") jumpHeight = 7f;
         else jumpHeight = 5f;
 
-        for (int i = 1; i <= 6; ++i)
+        for (int i = 1; i <= 5; ++i)
         {
             if (Input.GetKeyDown(keyCodes[i - 1]))
                 SceneManager.LoadScene("LEVEL" + i);

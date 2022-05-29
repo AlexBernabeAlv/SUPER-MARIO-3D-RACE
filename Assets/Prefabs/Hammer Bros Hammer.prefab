@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: -4864515525820155503}
   m_Layer: 0
   m_Name: Hammer Bros Hammer
-  m_TagString: Enemy
+  m_TagString: Hammer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

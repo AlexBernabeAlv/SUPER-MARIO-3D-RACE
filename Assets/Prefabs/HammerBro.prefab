@@ -1046,7 +1046,7 @@ MonoBehaviour:
   hammer: {fileID: 4445914059692875816, guid: b5bce0681660d0842a5c09448b986a57, type: 3}
   speed: 4
   timeBetweenThrows: 3.25
-  throwSound: {fileID: 8300000, guid: 1be9e4435576e3945aa01a8834859730, type: 3}
+  throwSound: {fileID: 8300000, guid: 471f93ce50a25e94d867e11101683561, type: 3}
 --- !u!1 &5542521032748114276
 GameObject:
   m_ObjectHideFlags: 0

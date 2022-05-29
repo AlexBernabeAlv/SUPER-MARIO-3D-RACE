@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -228,6 +228,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chomp: {fileID: 6732597850189450644, guid: 795b12d07ab00ac44a16939e3502d305, type: 3}
+  runSpeed: 12
+  turnSpeed: 90
+  soundEffect: {fileID: 8300000, guid: bd35f355592fa7449a4ccd5ce0c09937, type: 3}
 --- !u!4 &110139247
 Transform:
   m_ObjectHideFlags: 0
@@ -317,7 +320,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: 2.8730328e-32}
+  m_BoundingSphereOverride: {x: 8.35718e-39, y: 8.357184e-39, z: 8.357186e-39, w: 1.0193897e-38}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -367,6 +370,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cow: {fileID: 7462400246694555452, guid: ae3d51539c1350d4c8f10aa155def0c8, type: 3}
+  runSpeed: 3
+  turnSpeed: 90
 --- !u!4 &197935362
 Transform:
   m_ObjectHideFlags: 0
@@ -691,6 +696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coin: {fileID: 181588069536126267, guid: 2c636aeb7f2f6bb48bc7c21f756ce5a5, type: 3}
+  obj: []
 --- !u!4 &379714451
 Transform:
   m_ObjectHideFlags: 0
@@ -829,6 +835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thwomp: {fileID: 7343688818336566418, guid: 0245f2404f86b8541b273fadc220b752, type: 3}
   fallSpeed: 4
+  soundEffect: {fileID: 8300000, guid: 175b3b79e9104d742a7fc1885d3b029b, type: 3}
 --- !u!4 &437880959
 Transform:
   m_ObjectHideFlags: 0

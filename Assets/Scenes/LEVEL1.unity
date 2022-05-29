@@ -199,6 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thwomp: {fileID: 7343688818336566418, guid: 0245f2404f86b8541b273fadc220b752, type: 3}
   fallSpeed: 4
+  soundEffect: {fileID: 8300000, guid: 175b3b79e9104d742a7fc1885d3b029b, type: 3}
 --- !u!4 &39060041
 Transform:
   m_ObjectHideFlags: 0
@@ -519,7 +520,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 8.35718e-39, y: 8.357184e-39, z: 8.357186e-39, w: 1.0193897e-38}
+  m_BoundingSphereOverride: {x: 4.5905e-41, y: 2.6575438e+10, z: 4.5905e-41, w: 9.403955e-38}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -10728,6 +10729,7 @@ MonoBehaviour:
   chomp: {fileID: 6732597850189450644, guid: 795b12d07ab00ac44a16939e3502d305, type: 3}
   runSpeed: 12
   turnSpeed: 90
+  soundEffect: {fileID: 8300000, guid: bd35f355592fa7449a4ccd5ce0c09937, type: 3}
 --- !u!43 &1575907638
 Mesh:
   m_ObjectHideFlags: 0
@@ -15173,6 +15175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coin: {fileID: 181588069536126267, guid: 2c636aeb7f2f6bb48bc7c21f756ce5a5, type: 3}
+  obj: []
 --- !u!4 &1955015946
 Transform:
   m_ObjectHideFlags: 0

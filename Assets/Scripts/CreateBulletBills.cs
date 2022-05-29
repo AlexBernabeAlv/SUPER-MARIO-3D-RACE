@@ -45,14 +45,14 @@ public class CreateBulletBills : MonoBehaviour
             {
                 if (i % 2 == 0)
                 {
-                    obj[i] = (GameObject)Instantiate(bulletBill, new Vector3(-7.2f - i * 1.3f, 0.7f, 93.44f), bulletBill.transform.rotation);
+                    obj[i] = (GameObject)Instantiate(bulletBill, new Vector3(-7.2f - i * 1.3f, 0.7f, 93.4f), bulletBill.transform.rotation);
                     obj[i].transform.localScale += new Vector3(0.04f, 0.04f, 0.04f);
                     obj[i].transform.Rotate(0, 90, 0);
                 }
                 else
                 {
 
-                    obj[i] = (GameObject)Instantiate(bulletBill, new Vector3(7.2f + (i - 1) * 1.3f, 0.7f, 93.44f), bulletBill.transform.rotation);
+                    obj[i] = (GameObject)Instantiate(bulletBill, new Vector3(7.2f + (i - 1) * 1.3f, 0.7f, 93.4f), bulletBill.transform.rotation);
                     obj[i].transform.localScale += new Vector3(0.04f, 0.04f, 0.04f);
                     obj[i].transform.Rotate(0, 90, 0);
                 }
