@@ -11,18 +11,28 @@ public class CreateCoin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "LEVEL4")
+        if (SceneManager.GetActiveScene().name == "LEVEL1") {
+
+        }
+        else if (SceneManager.GetActiveScene().name == "LEVEL2") { }
+        else if (SceneManager.GetActiveScene().name == "LEVEL3") {
+            obj = new GameObject[12];
+            for (int i = 0; i < obj.Length; ++i)
+            {
+                if (i % 2 == 0) obj[i] = (GameObject)Instantiate(coin, new Vector3(-3.0f, 1.0f, 50.0f + 2*i), coin.transform.rotation);
+                else obj[i] = (GameObject)Instantiate(coin, new Vector3(3.0f, 1.0f, 50.0f + 2*i), coin.transform.rotation);
+                obj[i].transform.parent = transform;
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "LEVEL4")
         {
             obj = new GameObject[12];
             for (int i = 0; i < obj.Length; ++i)
             {
-                if (i % 2 == 0) obj[i] = (GameObject)Instantiate(coin, new Vector3(-3.0f, 1.0f, 30.0f + i), coin.transform.rotation);
-                else obj[i] = (GameObject)Instantiate(coin, new Vector3(3.0f, 1.0f, 30.0f + i), coin.transform.rotation);
+                if (i % 2 == 0) obj[i] = (GameObject)Instantiate(coin, new Vector3(-3.0f, 1.0f, 30.0f + 2*i), coin.transform.rotation);
+                else obj[i] = (GameObject)Instantiate(coin, new Vector3(3.0f, 1.0f, 30.0f + 2*i), coin.transform.rotation);
                 obj[i].transform.parent = transform;
             }
-        }
-        else if (SceneManager.GetActiveScene().name == "LEVEL1") {
-
         }
         else if (SceneManager.GetActiveScene().name == "LEVEL5") {
             obj = new GameObject[10];
@@ -32,8 +42,6 @@ public class CreateCoin : MonoBehaviour
                 obj[i].transform.parent = transform;
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL2") { }
-        else if (SceneManager.GetActiveScene().name == "LEVEL3") { }
     }
 
     // Update is called once per frame

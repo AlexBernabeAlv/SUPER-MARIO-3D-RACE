@@ -320,7 +320,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: 7.740411e+10}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: 5.4798713e+11}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -4579,7 +4579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whineSound: {fileID: 8300000, guid: 1be9e4435576e3945aa01a8834859730, type: 3}
-  coinSound: {fileID: 8300000, guid: 17ed9065e13834c45a32685b8ca22553, type: 3}
+  coinSound: {fileID: 8300000, guid: aaf9735a292c0d8478400e73e760b4a3, type: 3}
   runSpeed: 7
   turnSpeed: 180
   jumpHeight: 5
@@ -8663,7 +8663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whineSound: {fileID: 8300000, guid: 1be9e4435576e3945aa01a8834859730, type: 3}
-  coinSound: {fileID: 8300000, guid: 17ed9065e13834c45a32685b8ca22553, type: 3}
+  coinSound: {fileID: 8300000, guid: aaf9735a292c0d8478400e73e760b4a3, type: 3}
   runSpeed: 7
   turnSpeed: 180
   jumpHeight: 5
@@ -8894,6 +8894,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   koopaTroopa: {fileID: 6539711590886280314, guid: eb51fded5d9958048ba85c682c8d3694, type: 3}
+  runSpeed: 3
+  turnSpeed: 90
 --- !u!4 &1984746608
 Transform:
   m_ObjectHideFlags: 0

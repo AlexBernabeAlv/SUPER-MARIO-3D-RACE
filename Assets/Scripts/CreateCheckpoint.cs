@@ -40,24 +40,6 @@ public class CreateCheckpoint : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "LEVEL4")
         {
-            for (int i = 0; i < 2; ++i)
-            {
-                obj = (GameObject)Instantiate(checkpoint, new Vector3(4.5f - i * 9.0f, 1.65f, 70.0f), checkpoint.transform.rotation);
-                obj.transform.Rotate(0, 0, (i - 1) * 180);
-                obj.transform.parent = transform;
-            }
-            for (int i = 0; i < 2; ++i)
-            {
-                obj = (GameObject)Instantiate(checkpoint, new Vector3(8.0f - i * 16.0f, 1.65f, 70.0f), checkpoint.transform.rotation);
-                obj.transform.Rotate(0, 0, (i - 1) * 180);
-                obj.transform.parent = transform;
-            }
-            for (int i = 0; i < 2; ++i)
-            {
-                obj = (GameObject)Instantiate(checkpoint, new Vector3(12.0f - i * 24.0f, 1.65f, 70.0f), checkpoint.transform.rotation);
-                obj.transform.Rotate(0, 0, (i - 1) * 180);
-                obj.transform.parent = transform;
-            }
         }
         else if (SceneManager.GetActiveScene().name == "LEVEL5")
         {

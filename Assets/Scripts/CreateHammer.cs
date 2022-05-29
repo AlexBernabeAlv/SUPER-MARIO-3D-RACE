@@ -17,18 +17,18 @@ public class CreateHammer : MonoBehaviour
     void Start()
     {
         timeBetweenThrows = 3.15f;
-        if (SceneManager.GetActiveScene().name == "LEVEL5") speed = Random.Range(3f, 5f);
-        else if (SceneManager.GetActiveScene().name == "LEVEL2") speed = Random.Range(3f, 6f);
+        if (SceneManager.GetActiveScene().name == "LEVEL2") speed = Random.Range(3f, 6f);
         else if (SceneManager.GetActiveScene().name == "LEVEL3") speed = Random.Range(3f, 6f);
+        else if (SceneManager.GetActiveScene().name == "LEVEL5") speed = Random.Range(3f, 5f);
         obj = new GameObject();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "LEVEL5") speed = Random.Range(3f, 5f);
-        else if (SceneManager.GetActiveScene().name == "LEVEL2") speed = Random.Range(3f, 6f);
+        if (SceneManager.GetActiveScene().name == "LEVEL2") speed = Random.Range(3f, 6f);
         else if (SceneManager.GetActiveScene().name == "LEVEL3") speed = Random.Range(3f, 6f);
+        else if (SceneManager.GetActiveScene().name == "LEVEL5") speed = Random.Range(3f, 5f);
         timeToNextThrow -= Time.deltaTime;
         if (timeToNextThrow <= 0f)
         {
@@ -37,7 +37,6 @@ public class CreateHammer : MonoBehaviour
             //obj.transform.localScale -= new Vector3(0.8f, 10.0f, 0.8f);
             obj.transform.Rotate(0, 90, 0);
             Quaternion rot = transform.rotation;
-            Debug.Log(rot);
             if (rot[3] > 0) obj.GetComponent<Rigidbody>().velocity = new Vector3(speed, speed * 2f, 0f);
             else if (rot[3] < 0) obj.GetComponent<Rigidbody>().velocity = new Vector3(-speed, speed * 2f, 0f);
             else if (rot[3] == 0) obj.GetComponent<Rigidbody>().velocity = new Vector3(0f, speed * 2f, -speed);

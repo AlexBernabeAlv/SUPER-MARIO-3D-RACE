@@ -1632,10 +1632,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5875624832505763520}
-  - component: {fileID: 7334503054222335001}
+  - component: {fileID: 3217855813780165733}
+  - component: {fileID: 3986022836272314309}
   m_Layer: 0
   m_Name: KoopaTroopa
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1647,7 +1648,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6539711590886280314}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -3.861, y: -0.50000024, z: 2.831}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
@@ -1657,9 +1658,9 @@ Transform:
   - {fileID: 1824044902076948125}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7334503054222335001
-BoxCollider:
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!136 &3217855813780165733
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1668,9 +1669,30 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.18878709, y: 0.3082696, z: 0.3044167}
-  m_Center: {x: -0.0032822608, y: 0.1592348, z: -0.038181603}
+  m_Radius: 0.100194715
+  m_Height: 0.32304856
+  m_Direction: 1
+  m_Center: {x: -0.0099684475, y: 0.15262382, z: 0.022313261}
+--- !u!95 &3986022836272314309
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539711590886280314}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 450d0beec9c16b3499db69d6965778c5, type: 3}
+  m_Controller: {fileID: 9100000, guid: 246b63934ded8284288d018a473211b2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6722000746717435614
 GameObject:
   m_ObjectHideFlags: 0

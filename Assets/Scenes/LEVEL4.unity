@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.451401, g: 0.5008942, b: 0.5723129, a: 1}
+  m_IndirectSpecularColor: {r: 0.45140022, g: 0.50089264, b: 0.57231236, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -520,7 +520,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: 7.740411e+10}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0.05078125, w: 0.015625}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -1116,7 +1116,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45242
+  m_Name: pb_Mesh105364
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2060,7 +2060,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45076
+  m_Name: pb_Mesh105198
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10164,7 +10164,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45126
+  m_Name: pb_Mesh105248
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10781,7 +10781,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45096
+  m_Name: pb_Mesh105218
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10957,7 +10957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whineSound: {fileID: 8300000, guid: 1be9e4435576e3945aa01a8834859730, type: 3}
-  coinSound: {fileID: 8300000, guid: 17ed9065e13834c45a32685b8ca22553, type: 3}
+  coinSound: {fileID: 8300000, guid: aaf9735a292c0d8478400e73e760b4a3, type: 3}
   runSpeed: 7
   turnSpeed: 180
   jumpHeight: 5
@@ -11325,7 +11325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whineSound: {fileID: 8300000, guid: 1be9e4435576e3945aa01a8834859730, type: 3}
-  coinSound: {fileID: 8300000, guid: 17ed9065e13834c45a32685b8ca22553, type: 3}
+  coinSound: {fileID: 8300000, guid: aaf9735a292c0d8478400e73e760b4a3, type: 3}
   runSpeed: 7
   turnSpeed: 180
   jumpHeight: 5
@@ -11375,6 +11375,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   koopaTroopa: {fileID: 6539711590886280314, guid: eb51fded5d9958048ba85c682c8d3694, type: 3}
+  runSpeed: 3
+  turnSpeed: 90
 --- !u!1 &1788669592
 GameObject:
   m_ObjectHideFlags: 0

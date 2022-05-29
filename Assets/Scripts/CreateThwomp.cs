@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,27 +12,17 @@ public class CreateThwomp : MonoBehaviour
     void Start()
     {
         direction = new int[6];
-        if (SceneManager.GetActiveScene().name == "LEVEL4")
-        {
-            obj = new GameObject[6];
-            for (int i = 0; i < 6; ++i)
-            {
-                if (i % 2 == 0) obj[i] = (GameObject)Instantiate(thwomp, new Vector3(-1.5f - 2 * i, 3f, 80f), thwomp.transform.rotation);
-                else obj[i] = (GameObject)Instantiate(thwomp, new Vector3(2 * i, 0f, 80f), thwomp.transform.rotation);
-                obj[i].transform.parent = transform;
-            }
-        }
-        else if (SceneManager.GetActiveScene().name == "LEVEL1")
+
+        if (SceneManager.GetActiveScene().name == "LEVEL1")
         {
             obj = new GameObject[2];
             for (int i = 0; i < 2; ++i)
             {
-                if (i % 2 == 0) obj[i] = (GameObject)Instantiate(thwomp, new Vector3(-2.0f, 3.0f, 75.0f), thwomp.transform.rotation);
-                else obj[i] = (GameObject)Instantiate(thwomp, new Vector3(2.0f, 3.0f, 75.0f), thwomp.transform.rotation);
+                if (i % 2 == 0) obj[i] = (GameObject)Instantiate(thwomp, new Vector3(-2.2f, 3f, 75f), thwomp.transform.rotation);
+                else obj[i] = (GameObject)Instantiate(thwomp, new Vector3(2.2f, 3f, 75f), thwomp.transform.rotation);
                 obj[i].transform.parent = transform;
             }
         }
-        else if (SceneManager.GetActiveScene().name == "LEVEL5") { }
         else if (SceneManager.GetActiveScene().name == "LEVEL2")
         {
             obj = new GameObject[4];
@@ -46,6 +34,17 @@ public class CreateThwomp : MonoBehaviour
             }
         }
         else if (SceneManager.GetActiveScene().name == "LEVEL3") { }
+        else if (SceneManager.GetActiveScene().name == "LEVEL4")
+        {
+            obj = new GameObject[6];
+            for (int i = 0; i < 6; ++i)
+            {
+                if (i % 2 == 0) obj[i] = (GameObject)Instantiate(thwomp, new Vector3(-1.5f - 2 * i, 3f, 80f), thwomp.transform.rotation);
+                else obj[i] = (GameObject)Instantiate(thwomp, new Vector3(2 * i, 0f, 80f), thwomp.transform.rotation);
+                obj[i].transform.parent = transform;
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "LEVEL5") { }
     }
 
     // Update is called once per frame

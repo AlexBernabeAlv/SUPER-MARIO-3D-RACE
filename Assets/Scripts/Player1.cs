@@ -36,11 +36,11 @@ public class Player1 : MonoBehaviour {
         {
             runSpeed = runSpeed + 0.1f;
             Destroy(col.gameObject);
-            AudioSource.PlayClipAtPoint(coinSound, transform.position, 0.05f);
+            AudioSource.PlayClipAtPoint(coinSound, transform.position, 0.15f);
         }
         if(col.gameObject.tag == "Hammer") Destroy(col.gameObject);
         if (col.gameObject.tag == "Bullet" && !godMode) restart = true;
-        if(col.gameObject.tag == "Checkpoint") lastCheckpointPosition = col.gameObject.transform.position;
+        if(col.gameObject.tag == "Checkpoint") lastCheckpointPosition = col.gameObject.transform.position + new Vector3(2f,-2f,0f);
     }
 
     private void OnCollisionEnter(Collision col) {
