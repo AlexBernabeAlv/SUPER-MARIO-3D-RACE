@@ -26,20 +26,20 @@ public class PositionController : MonoBehaviour
     {
         if (player1.getPlayerZ() >= player2.getPlayerZ())
         {
-            left.rectTransform.sizeDelta = new Vector2(92, 60);
-            right.rectTransform.sizeDelta = new Vector2(112, 60);
+            left.rectTransform.sizeDelta = new Vector2(184, 120);
+            right.rectTransform.sizeDelta = new Vector2(224, 120);
             left.sprite = first;
             right.sprite = second;
         }
         else
         {
-            left.rectTransform.sizeDelta = new Vector2(112, 60);
-            right.rectTransform.sizeDelta = new Vector2(92, 60);
+            left.rectTransform.sizeDelta = new Vector2(224, 120);
+            right.rectTransform.sizeDelta = new Vector2(184, 120);
             left.sprite = second;
             right.sprite = first;
         }
 
-        left.transform.position = new Vector3(Screen.width / 2 - 70, 40, 0);
-        right.transform.position = new Vector3(Screen.width - 70, 40, 0);
+        left.transform.position = new Vector3(Screen.width / 2 - 140, 80, 0);
+        right.transform.position = new Vector3(Screen.width - 140, 80, 0);
     }
 }
