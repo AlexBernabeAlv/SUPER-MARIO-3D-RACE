@@ -59,11 +59,7 @@ public class CreateHammerBro : MonoBehaviour
 
             for (int i = 0; i < 6; ++i)
             {
-                if (i % 2 == 0)
-                {
-                    obj[i] = (GameObject)Instantiate(hammerBro, new Vector3(-11f, 3f, 50f + i * 5f), hammerBro.transform.rotation);
-
-                }
+                if (i % 2 == 0) obj[i] = (GameObject)Instantiate(hammerBro, new Vector3(-11f, 3f, 50f + i * 5f), hammerBro.transform.rotation);
                 else
                 {
                     obj[i] = (GameObject)Instantiate(hammerBro, new Vector3(11f, 3f, 50f + (i - 1) * 5f), hammerBro.transform.rotation);

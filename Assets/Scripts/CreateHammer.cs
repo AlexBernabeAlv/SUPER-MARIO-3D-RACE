@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CreateHammer : MonoBehaviour
 {
@@ -8,37 +9,40 @@ public class CreateHammer : MonoBehaviour
     public float speed;
     public float timeBetweenThrows;
     public AudioClip throwSound;
+    GameObject obj;
 
-    float timeToNextThrow = 0.0f;
-
+    float timeToNextThrow = 0.7f;
+    float turnSpeed = 90f;
     // Start is called before the first frame update
     void Start()
     {
-
+        timeBetweenThrows = 3.15f;
+        if (SceneManager.GetActiveScene().name == "LEVEL3") speed = Random.Range(3f, 4f);
+        else if (SceneManager.GetActiveScene().name == "LEVEL4") speed = Random.Range(3f, 6f);
+        else if (SceneManager.GetActiveScene().name == "LEVEL5") speed = Random.Range(3f,6f);
+        obj = new GameObject();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (SceneManager.GetActiveScene().name == "LEVEL3") speed = Random.Range(3f, 4f);
+        else if (SceneManager.GetActiveScene().name == "LEVEL4") speed = Random.Range(3f, 6f);
+        else if (SceneManager.GetActiveScene().name == "LEVEL5") speed = Random.Range(3f, 6f);
         timeToNextThrow -= Time.deltaTime;
-        if (timeToNextThrow <= 0.0f)
+        if (timeToNextThrow <= 0f)
         {
             timeToNextThrow = timeBetweenThrows;
-            GameObject obj = Instantiate(hammer, transform.position + new Vector3(0.0f, 0.25f, -0.25f), transform.rotation);
+            obj = Instantiate(hammer, transform.position + new Vector3(0f, 0.5f, -0.25f), transform.rotation);
             //obj.transform.localScale -= new Vector3(0.8f, 10.0f, 0.8f);
             obj.transform.Rotate(0, 90, 0);
             Quaternion rot = transform.rotation;
-            Debug.Log(rot);
-            if (rot[3] > 0)
-            {
-                obj.GetComponent<Rigidbody>().velocity = new Vector3(speed, speed * 2.0f, 0.0f);
-            }
-            else if (rot[3] < 0)
-            {
-                obj.GetComponent<Rigidbody>().velocity = new Vector3(-speed, speed * 2.0f, 0.0f);
-            }
-
+            //Debug.Log(rot);
+            if (rot[3] > 0) obj.GetComponent<Rigidbody>().velocity = new Vector3(speed, speed * 2f, 0f);
+            else if (rot[3] < 0) obj.GetComponent<Rigidbody>().velocity = new Vector3(-speed, speed * 2f, 0f);
             //AudioSource.PlayClipAtPoint(throwSound, transform.position);
         }
+        obj.transform.Rotate(0, 0, turnSpeed * Time.deltaTime);
+
     }
 }

@@ -39,9 +39,7 @@ public class Player2 : MonoBehaviour
             AudioSource.PlayClipAtPoint(coinSound, transform.position, 0.05f);
         }
         if (col.gameObject.tag == "Bullet")
-        {
             restart = true;
-        }
     }
 
     private void OnCollisionEnter(Collision col) {
@@ -95,6 +93,8 @@ public class Player2 : MonoBehaviour
         isRunning = Input.GetKey(KeyCode.I) || Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.K) || Input.GetKey(KeyCode.L);
         gameObject.GetComponent<Animator>().SetBool("IsRunning", isRunning);
         gameObject.GetComponent<Animator>().SetBool("IsJumping", !isGrounded);
+
+        if (!isRunning) rb.angularVelocity = Vector3.zero;
 
         foreach (Camera c in Camera.allCameras) {
             if (c.gameObject.name == "Player2MainCamera")

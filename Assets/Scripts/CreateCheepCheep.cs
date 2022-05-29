@@ -35,39 +35,43 @@ public class CreateCheepCheep : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < 2; ++i)
+        if (SceneManager.GetActiveScene().name == "LEVEL3")
         {
-            if (i % 2 == 0)
+            for (int i = 0; i < 2; ++i)
             {
-                obj[i].transform.Translate(transform.right * runSpeed * Time.deltaTime, Space.World);
+                if (i % 2 == 0)
+                {
+                    obj[i].transform.Translate(transform.right * runSpeed * Time.deltaTime, Space.World);
 
-                if (isGrounded[i])
-                {
-                    if(rb[i].velocity == Vector3.zero) rb[i].AddForce(new Vector3(0f, 1f, 0f) * jumpHeight, ForceMode.Impulse);
-                    isGrounded[i] = false;
-                }
-                else if (obj[i].transform.position.y <= -2.5f)
-                {
-                    obj[i].transform.position = new Vector3(-10f + 20f * i, -2.5f, 110f);
-                    rb[i].velocity = Vector3.zero;
-                    isGrounded[i] = true;
-                }
-            }
-            else
-            {
-                obj[i].transform.Translate(-transform.right * runSpeed * Time.deltaTime, Space.World);
-
-                if (isGrounded[i])
-                {
-                    if (rb[i].velocity == Vector3.zero) rb[i].AddForce(new Vector3(0f, 1f, 0f) * jumpHeight, ForceMode.Impulse);
+                    if (isGrounded[i])
+                    {
+                        if (rb[i].velocity == Vector3.zero) rb[i].AddForce(new Vector3(0f, 1f, 0f) * jumpHeight, ForceMode.Impulse);
                         isGrounded[i] = false;
+                    }
+                    else if (obj[i].transform.position.y <= -2.5f)
+                    {
+                        obj[i].transform.position = new Vector3(-10f + 20f * i, -2.5f, 110f);
+                        rb[i].velocity = Vector3.zero;
+                        isGrounded[i] = true;
+                    }
                 }
-                else if(obj[i].transform.position.y <= -2.5f)
+                else
                 {
-                    obj[i].transform.position = new Vector3(-10f + 20f * i, -2.5f, 110f);
-                    rb[i].velocity = Vector3.zero;
-                    isGrounded[i] = true;
+                    obj[i].transform.Translate(-transform.right * runSpeed * Time.deltaTime, Space.World);
+
+                    if (isGrounded[i])
+                    {
+                        if (rb[i].velocity == Vector3.zero) rb[i].AddForce(new Vector3(0f, 1f, 0f) * jumpHeight, ForceMode.Impulse);
+                        isGrounded[i] = false;
+                    }
+                    else if (obj[i].transform.position.y <= -2.5f)
+                    {
+                        obj[i].transform.position = new Vector3(-10f + 20f * i, -2.5f, 110f);
+                        rb[i].velocity = Vector3.zero;
+                        isGrounded[i] = true;
+                    }
                 }
+
             }
         }
     }

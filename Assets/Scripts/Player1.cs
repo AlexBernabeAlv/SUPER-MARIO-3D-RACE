@@ -93,7 +93,9 @@ public class Player1 : MonoBehaviour {
         gameObject.GetComponent<Animator>().SetBool("IsRunning", isRunning);
         gameObject.GetComponent<Animator>().SetBool("IsJumping", !isGrounded);
 
-        foreach (Camera c in Camera.allCameras) {
+        if(!isRunning) rb.angularVelocity = Vector3.zero;
+
+            foreach (Camera c in Camera.allCameras) {
             if (c.gameObject.name == "Player1MainCamera") {
                 c.transform.position = transform.position + new Vector3(0f, 3f, -4f);
                 if (Input.GetKey(KeyCode.Q)) c.depth = -1;
