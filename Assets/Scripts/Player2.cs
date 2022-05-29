@@ -40,6 +40,7 @@ public class Player2 : MonoBehaviour
         }
         if (col.gameObject.tag == "Hammer") Destroy(col.gameObject);
         if (col.gameObject.tag == "Bullet" && !godMode) restart = true;
+        if (col.gameObject.tag == "Checkpoint") lastCheckpointPosition = col.gameObject.transform.position;
     }
 
     private void OnCollisionEnter(Collision col) {

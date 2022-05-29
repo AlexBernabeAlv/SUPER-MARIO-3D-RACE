@@ -40,6 +40,7 @@ public class Player1 : MonoBehaviour {
         }
         if(col.gameObject.tag == "Hammer") Destroy(col.gameObject);
         if (col.gameObject.tag == "Bullet" && !godMode) restart = true;
+        if(col.gameObject.tag == "Checkpoint") lastCheckpointPosition = col.gameObject.transform.position;
     }
 
     private void OnCollisionEnter(Collision col) {
@@ -66,7 +67,7 @@ public class Player1 : MonoBehaviour {
         godMode = false;
         restart = false;
         winner = false;
-        lastCheckpointPosition = new Vector3(-5f, -0.3f, 4f);
+        lastCheckpointPosition = new Vector3(-3f, -0.3f, 4f);
     }
 
     // Update is called once per frame
