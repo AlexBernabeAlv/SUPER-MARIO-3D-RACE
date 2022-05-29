@@ -972,6 +972,7 @@ GameObject:
   - component: {fileID: 5296064409757615305}
   - component: {fileID: 1463447057536985574}
   - component: {fileID: 7388993395611143211}
+  - component: {fileID: -2530272705610403566}
   m_Layer: 0
   m_Name: HammerBro
   m_TagString: Enemy
@@ -1030,6 +1031,22 @@ CapsuleCollider:
   m_Height: 0.3935012
   m_Direction: 1
   m_Center: {x: 0.03149278, y: 0.1802773, z: 0.05194663}
+--- !u!114 &-2530272705610403566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4770638195748593267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65912571e0e41cd42bd6aaf8b7942ef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hammer: {fileID: 4445914059692875816, guid: b5bce0681660d0842a5c09448b986a57, type: 3}
+  speed: 4
+  timeBetweenThrows: 3.25
+  throwSound: {fileID: 8300000, guid: 1be9e4435576e3945aa01a8834859730, type: 3}
 --- !u!1 &5542521032748114276
 GameObject:
   m_ObjectHideFlags: 0
