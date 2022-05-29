@@ -69,25 +69,7 @@ public class CreateCheckpoint : MonoBehaviour
             }
             for (int i = 0; i < 2; ++i)
             {
-                obj = (GameObject)Instantiate(checkpoint, new Vector3(4.0f - i * 8.0f, 1.65f, 59.4f), checkpoint.transform.rotation);
-                obj.transform.Rotate(0, 0, (i - 1) * 180);
-                obj.transform.parent = transform;
-            }
-            for (int i = 0; i < 2; ++i)
-            {
-                obj = (GameObject)Instantiate(checkpoint, new Vector3(9.0f - i * 18.0f, 1.65f, 59.4f), checkpoint.transform.rotation);
-                obj.transform.Rotate(0, 0, (i - 1) * 180);
-                obj.transform.parent = transform;
-            }
-            for (int i = 0; i < 2; ++i)
-            {
-                obj = (GameObject)Instantiate(checkpoint, new Vector3(14.0f - i * 28.0f, 1.65f, 59.4f), checkpoint.transform.rotation);
-                obj.transform.Rotate(0, 0, (i - 1) * 180);
-                obj.transform.parent = transform;
-            }
-            for (int i = 0; i < 2; ++i)
-            {
-                obj = (GameObject)Instantiate(checkpoint, new Vector3(6.0f - i * 12.0f, 1.65f, 103.0f), checkpoint.transform.rotation);
+                obj = (GameObject)Instantiate(checkpoint, new Vector3(7.0f - i * 14.0f, 1.65f, 100.0f), checkpoint.transform.rotation);
                 obj.transform.Rotate(0, 0, (i - 1) * 180);
                 obj.transform.parent = transform;
             }

@@ -37,9 +37,10 @@ public class CreateHammer : MonoBehaviour
             //obj.transform.localScale -= new Vector3(0.8f, 10.0f, 0.8f);
             obj.transform.Rotate(0, 90, 0);
             Quaternion rot = transform.rotation;
-            //Debug.Log(rot);
+            Debug.Log(rot);
             if (rot[3] > 0) obj.GetComponent<Rigidbody>().velocity = new Vector3(speed, speed * 2f, 0f);
             else if (rot[3] < 0) obj.GetComponent<Rigidbody>().velocity = new Vector3(-speed, speed * 2f, 0f);
+            else if (rot[3] == 0) obj.GetComponent<Rigidbody>().velocity = new Vector3(0f, speed * 2f, -speed);
             AudioSource.PlayClipAtPoint(throwSound, transform.position);
         }
         if (obj)
