@@ -33,44 +33,47 @@ public class CreateSuperPiranha : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (changeDirection)
+        if (SceneManager.GetActiveScene().name == "LEVEL3" || SceneManager.GetActiveScene().name == "LEVEL5")
         {
-            if (direction == 0)
+            if (changeDirection)
             {
-                if (obj.transform.rotation.eulerAngles.y >=180)
+                if (direction == 0)
                 {
-                    obj.transform.Rotate(0, turnSpeed * Time.deltaTime, 0);
+                    if (obj.transform.rotation.eulerAngles.y >= 180)
+                    {
+                        obj.transform.Rotate(0, turnSpeed * Time.deltaTime, 0);
+                    }
+                    else
+                    {
+                        changeDirection = false;
+                        direction++;
+                    }
                 }
-                else
+                else if (direction == 1)
                 {
-                    changeDirection = false;
-                    direction++;
+                    if (obj.transform.rotation.eulerAngles.y < 180)
+                    {
+                        obj.transform.Rotate(0, turnSpeed * Time.deltaTime, 0);
+                    }
+                    else
+                    {
+                        changeDirection = false;
+                        direction--;
+                    }
                 }
             }
-            else if (direction == 1)
+            else
             {
-                if (obj.transform.rotation.eulerAngles.y < 180)
+                if (direction == 0)
                 {
-                    obj.transform.Rotate(0, turnSpeed * Time.deltaTime, 0);
+                    if (obj.transform.position.z > 5) obj.transform.Translate(-transform.forward * runSpeed * Time.deltaTime, Space.World);
+                    else changeDirection = true;
                 }
-                else
+                else if (direction == 1)
                 {
-                    changeDirection = false;
-                    direction--;
+                    if (obj.transform.position.z < 35) obj.transform.Translate(transform.forward * runSpeed * Time.deltaTime, Space.World);
+                    else changeDirection = true;
                 }
-            }
-        }
-        else
-        {
-            if (direction == 0)
-            {
-                if (obj.transform.position.z > 5) obj.transform.Translate(-transform.forward * runSpeed * Time.deltaTime, Space.World);
-                else changeDirection = true;
-            }
-            else if (direction == 1)
-            {
-                if (obj.transform.position.z < 35) obj.transform.Translate(transform.forward * runSpeed * Time.deltaTime, Space.World);
-                else changeDirection = true;
             }
         }
     }
